@@ -8,6 +8,8 @@ npm create astro@latest -- --template minimal
 
 ## 🚀 Project Structure
 
+Updating config
+
 Inside of your Astro project, you'll see the following folders and files:
 
 ```text
