@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — style guide: black, white, teal */
+  --color-weegee-black: #000000;
+  --color-weegee-white: #ffffff;
+  --color-weegee-teal: #00a19a;
+  --color-weegee-yellow: #fbdf64;
+
+  --font-sans: "Avenir", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Baskerville", ui-serif, Georgia, serif;
+}
+
+@font-face {
+  font-family: "Baskerville";
+  src: url("/fonts/baskerville-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/avenir-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+
+  /* Headings: Baskerville Semibold, kerning reduced */
+  h1 {
+    font-family: "Baskerville", serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Subheadings: Avenir Light, kerning increased */
+  h2,
+  h3 {
+    font-family: "Avenir", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  body,
+  p {
+    font-weight: 300;
+  }
+}

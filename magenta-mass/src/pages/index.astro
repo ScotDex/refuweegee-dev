@@ -1,17 +1,192 @@
 ---
-
+import Layout from "../components/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Refuweegee | We're All Fae Somewhere">
+  <main class="bg-white min-h-screen pb-24 font-sans">
+    <!-- Bento Grid Layout -->
+    <section class="max-w-7xl mx-auto px-6 pt-12 pb-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+        <!-- Large Story Card -->
+        <a
+          href="/your-words"
+          class="md:col-span-2 md:row-span-2 bg-white rounded-3xl overflow-hidden relative group border border-weegee-black/5"
+        >
+          <img
+            src="/assets/letter.webp"
+            alt="Glasgow Community"
+            class="w-full h-full object-cover transition-transform group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-linear-to-t from-weegee-black/60 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute bottom-8 left-8 right-8 text-white grid grid-cols-[3fr_2fr] items-center gap-4"
+          >
+            <div>
+              <h3 class="font-serif text-3xl">Community Stories</h3>
+              <p>Read letters fae a local</p>
+            </div>
+            <div
+              class="relative h-12 w-12 rounded-full bg-white/20 overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full hidden md:flex items-center self-center justify-self-start"
+            >
+              <svg
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <polygon points="5,3 19,12 5,21"></polygon>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Featured Teal Box -->
+        <a
+          href="/your-donations"
+          class="bg-weegee-teal rounded-3xl p-8 flex flex-col justify-between text-white md:col-span-1 group cursor-pointer no-underline"
+        >
+          <h3 class="text-2xl font-serif">Welcome Packs</h3>
+          <p class="text-sm">Building connections since 2015</p>
+          <div
+            class="relative mt-4 h-12 w-12 rounded-full bg-white/20 overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full hidden md:flex items-center"
+          >
+            <svg
+              class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <polygon points="5,3 19,12 5,21"></polygon>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Action Card -->
+        <div
+          class="hidden md:block bg-weegee-black rounded-3xl p-8 text-white md:col-span-1"
+        >
+          <h3 class="text-4xl font-serif mb-2">1,500+</h3>
+          <p>Packs delivered this month</p>
+        </div>
+
+        <!-- Secondary Imagery -->
+        <div
+          class="hidden md:block md:col-span-2 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
+        >
+          <img
+            src="/assets/group.webp"
+            alt="Volunteers"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- section 2 -->
+    <section class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+        <!-- Anniversary Card -->
+        <a
+          href="/your-donations"
+          class="bg-weegee-teal rounded-3xl p-8 flex flex-col justify-between text-white md:col-span-2 group cursor-pointer no-underline"
+        >
+          <p class="text-2xl lg:text-5xl uppercase lg:tracking-widest">
+            Refuweegee is 10!
+          </p>
+          <p>
+            Please help us exist for another ten by donating to our anniversary
+            fundraiser.
+          </p>
+          <div
+            class="relative h-12 w-12 rounded-full bg-white/20 overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full hidden md:flex items-center"
+          >
+            <svg
+              class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <polygon points="5,3 19,12 5,21"></polygon>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Large Story Card (right) -->
+        <a
+          href="/safewithme"
+          class="md:col-span-2 md:row-span-2 md:col-start-3 bg-black rounded-3xl overflow-hidden relative group border border-weegee-black/5"
+        >
+          <img
+            src="/assets/safe.webp"
+            alt="Glasgow Community"
+            class="size-1/2 mx-auto lg:size-3/4 lg:object-cover transition-transform group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-linear-to-t from-weegee-black/60 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute bottom-8 left-8 right-8 text-white lg:grid lg:grid-cols-[3fr_2fr] items-center gap-4"
+          >
+            <div>
+              <h3 class="font-serif text-2xl lg:text-3xl">Show your support</h3>
+              <p>Get your free poster</p>
+            </div>
+            <div
+              class="relative h-12 w-12 rounded-full bg-white/20 overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full hidden md:flex items-center self-center justify-self-start"
+            >
+              <svg
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <polygon points="5,3 19,12 5,21"></polygon>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Secondary Imagery -->
+        <div
+          class="hidden md:block md:col-span-2 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
+        >
+          <img
+            src="/assets/pens.webp"
+            alt="Volunteers"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Quick-Action Bar (Mobile/Tablet focus) -->
+    <div
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-lg bg-weegee-teal text-white rounded-full py-4 px-8 shadow-2xl flex justify-between items-center z-50 border-2 border-white/20 backdrop-blur-sm"
+    >
+      <button class="flex flex-col items-center gap-1 group">
+        <span class="text-xl group-hover:-translate-y-1 transition-transform"
+          >🌟</span
+        >
+        <span class="text-[10px] uppercase tracking-widest font-bold"
+          >Donate</span
+        >
+      </button>
+      <button class="flex flex-col items-center gap-1 group">
+        <span class="text-xl group-hover:-translate-y-1 transition-transform"
+          >🤲</span
+        >
+        <span class="text-[10px] uppercase tracking-widest font-bold"
+          >Volunteer</span
+        >
+      </button>
+      <button
+        class="flex flex-col items-center gap-1 group bg-white text-weegee-teal px-4 py-1 rounded-full"
+      >
+        <span class="text-xl">🆘</span>
+        <span class="text-[10px] uppercase tracking-widest font-bold"
+          >Get Help</span
+        >
+      </button>
+    </div>
+  </main>
+</Layout>

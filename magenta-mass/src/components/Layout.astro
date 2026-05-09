@@ -1,0 +1,109 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Refuweegee - We're all fae somewhere" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-weegee-black antialiased font-sans">
+    <header class="border-b border-weegee-black/10 relative">
+      <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+        <a href="/">
+          <img src="/assets/logo-secondary.webp" alt="Refuweegee" class="h-12 w-auto" />
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="hidden md:flex items-center gap-6 text-sm font-sans">
+          <li><a href="/" class="hover:text-weegee-teal transition-colors">Home</a></li>
+          <li><a href="/safewithme" class="hover:text-weegee-teal transition-colors">Safe With Me</a></li>
+          <li><a href="/copy-of-about" class="hover:text-weegee-teal transition-colors">Get Involved</a></li>
+          <li><a href="/make-a-referral" class="hover:text-weegee-teal transition-colors">Make a Referral</a></li>
+          <li><a href="/shop" class="hover:text-weegee-teal transition-colors">Shop</a></li>
+          <li><a href="/events" class="hover:text-weegee-teal transition-colors">Events</a></li>
+        </ul>
+        <ul class="hidden md:flex items-center gap-4 text-sm">
+          <li><a href="/about" class="hover:text-weegee-teal transition-colors">About</a></li>
+          <li><a href="/contact" class="hover:text-weegee-teal transition-colors">Contact</a></li>
+          <li>
+            <a href="/your-donations" class="bg-weegee-teal text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity">
+              Donate
+            </a>
+          </li>
+        </ul>
+
+        <!-- Hamburger button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="block w-6 h-0.5 bg-weegee-black transition-all duration-300" id="bar-1"></span>
+          <span class="block w-6 h-0.5 bg-weegee-black transition-all duration-300" id="bar-2"></span>
+          <span class="block w-6 h-0.5 bg-weegee-black transition-all duration-300" id="bar-3"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden absolute top-full left-0 right-0 bg-white border-t border-weegee-black/10 z-50 shadow-lg overflow-hidden transition-[max-height] duration-300 ease-in-out"
+        style="max-height: 0"
+      >
+        <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-sans">
+          <li><a href="/" class="block py-2 hover:text-weegee-teal transition-colors">Home</a></li>
+          <li><a href="/safewithme" class="block py-2 hover:text-weegee-teal transition-colors">Safe With Me</a></li>
+          <li><a href="/copy-of-about" class="block py-2 hover:text-weegee-teal transition-colors">Get Involved</a></li>
+          <li><a href="/make-a-referral" class="block py-2 hover:text-weegee-teal transition-colors">Make a Referral</a></li>
+          <li><a href="/shop" class="block py-2 hover:text-weegee-teal transition-colors">Shop</a></li>
+          <li><a href="/events" class="block py-2 hover:text-weegee-teal transition-colors">Events</a></li>
+          <li class="border-t border-weegee-black/10 pt-4 mt-2 flex flex-col gap-4">
+            <a href="/about" class="block hover:text-weegee-teal transition-colors">About</a>
+            <a href="/contact" class="block hover:text-weegee-teal transition-colors">Contact</a>
+            <a href="/your-donations" class="block bg-weegee-teal text-white px-4 py-3 rounded-full text-center hover:opacity-90 transition-opacity">
+              Donate
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <slot />
+
+    <script>
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("mobile-menu");
+      const bar1 = document.getElementById("bar-1");
+      const bar2 = document.getElementById("bar-2");
+      const bar3 = document.getElementById("bar-3");
+
+      toggle?.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "false";
+        toggle.setAttribute("aria-expanded", String(isOpen));
+
+        if (menu) {
+          menu.style.maxHeight = isOpen ? menu.scrollHeight + "px" : "0";
+        }
+
+        bar1?.classList.toggle("rotate-45", isOpen);
+        bar1?.classList.toggle("translate-y-2", isOpen);
+        bar2?.classList.toggle("opacity-0", isOpen);
+        bar3?.classList.toggle("-rotate-45", isOpen);
+        bar3?.classList.toggle("-translate-y-2", isOpen);
+      });
+    </script>
+  </body>
+</html>
