@@ -30,6 +30,7 @@
 @layer base {
   html {
     font-size: 18px;
+    color: #000000;
   }
 
   /* Headings: Baskerville Semibold, kerning reduced */
