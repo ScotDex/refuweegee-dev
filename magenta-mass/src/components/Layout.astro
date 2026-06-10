@@ -3,9 +3,10 @@ import "../styles/global.css";
 
 interface Props {
   title: string;
+  pageBackground?: string;
 }
 
-const { title } = Astro.props;
+const { title, pageBackground = "bg-white" } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,25 +21,85 @@ const { title } = Astro.props;
   </head>
   <body class="bg-white text-weegee-black antialiased font-sans">
     <header class="border-b border-weegee-black/10 relative">
-      <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+      <nav
+        class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between"
+      >
         <a href="/">
-          <img src="/assets/logo-secondary.webp" alt="Refuweegee" class="h-12 w-auto" />
+          <img
+            src="/assets/logo-secondary.webp"
+            alt="Refuweegee"
+            class="h-12 w-auto"
+          />
         </a>
 
         <!-- Desktop nav -->
         <ul class="hidden md:flex items-center gap-6 text-sm font-sans">
-          <li><a href="/" class="hover:text-weegee-teal transition-colors">Home</a></li>
-          <li><a href="/safewithme" class="hover:text-weegee-teal transition-colors">Safe With Me</a></li>
-          <li><a href="/copy-of-about" class="hover:text-weegee-teal transition-colors">Get Involved</a></li>
-          <li><a href="/make-a-referral" class="hover:text-weegee-teal transition-colors">Make a Referral</a></li>
-          <li><a href="/shop" class="hover:text-weegee-teal transition-colors">Shop</a></li>
-          <li><a href="/events" class="hover:text-weegee-teal transition-colors">Events</a></li>
+          <li>
+            <a
+              href="/"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/safe-with-me"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Safe With Me</a
+            >
+          </li>
+          <li>
+            <a
+              href="/get-involved"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Get Involved</a
+            >
+          </li>
+          <li>
+            <a
+              href="/fundraise"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Fundraise for us</a
+            >
+          </li>
+          <li>
+            <a
+              href="/referrals"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Make a Referral</a
+            >
+          </li>
+          <li>
+            <a
+              href="/shop"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Shop</a
+            >
+          </li>
+          <li>
+            <a
+              href="/events"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Events</a
+            >
+          </li>
         </ul>
         <ul class="hidden md:flex items-center gap-4 text-sm">
-          <li><a href="/about" class="hover:text-weegee-teal transition-colors">About</a></li>
-          <li><a href="/contact" class="hover:text-weegee-teal transition-colors">Contact</a></li>
           <li>
-            <a href="/your-donations" class="bg-weegee-teal text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity">
+            <a href="/about" class="hover:text-weegee-teal transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="/contact" class="hover:text-weegee-teal transition-colors"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="/your-donations"
+              class="bg-weegee-teal text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
+            >
               Donate
             </a>
           </li>
@@ -50,10 +111,17 @@ const { title } = Astro.props;
           class="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
           aria-label="Toggle menu"
           aria-expanded="false"
+          aria-controls="mobile-menu"
         >
-          <span class="block w-6 h-0.5 bg-weegee-black transition-all duration-300" id="bar-1"></span>
-          <span class="block w-6 h-0.5 bg-weegee-black transition-all duration-300" id="bar-2"></span>
-          <span class="block w-6 h-0.5 bg-weegee-black transition-all duration-300" id="bar-3"></span>
+          <span
+            class="block w-6 h-0.5 bg-weegee-black transition-all duration-300"
+            id="bar-1"></span>
+          <span
+            class="block w-6 h-0.5 bg-weegee-black transition-all duration-300"
+            id="bar-2"></span>
+          <span
+            class="block w-6 h-0.5 bg-weegee-black transition-all duration-300"
+            id="bar-3"></span>
         </button>
       </nav>
 
@@ -64,16 +132,70 @@ const { title } = Astro.props;
         style="max-height: 0"
       >
         <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-sans">
-          <li><a href="/" class="block py-2 hover:text-weegee-teal transition-colors">Home</a></li>
-          <li><a href="/safewithme" class="block py-2 hover:text-weegee-teal transition-colors">Safe With Me</a></li>
-          <li><a href="/copy-of-about" class="block py-2 hover:text-weegee-teal transition-colors">Get Involved</a></li>
-          <li><a href="/make-a-referral" class="block py-2 hover:text-weegee-teal transition-colors">Make a Referral</a></li>
-          <li><a href="/shop" class="block py-2 hover:text-weegee-teal transition-colors">Shop</a></li>
-          <li><a href="/events" class="block py-2 hover:text-weegee-teal transition-colors">Events</a></li>
-          <li class="border-t border-weegee-black/10 pt-4 mt-2 flex flex-col gap-4">
-            <a href="/about" class="block hover:text-weegee-teal transition-colors">About</a>
-            <a href="/contact" class="block hover:text-weegee-teal transition-colors">Contact</a>
-            <a href="/your-donations" class="block bg-weegee-teal text-white px-4 py-3 rounded-full text-center hover:opacity-90 transition-opacity">
+          <li>
+            <a
+              href="/"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/safe-with-me"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Safe With Me</a
+            >
+          </li>
+          <li>
+            <a
+              href="/get-involved"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Get Involved</a
+            >
+          </li>
+          <li>
+            <a
+              href="/fundraise"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Fundraise for us</a
+            >
+          </li>
+          <li>
+            <a
+              href="/referrals"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Make a Referral</a
+            >
+          </li>
+          <li>
+            <a
+              href="/shop"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Shop</a
+            >
+          </li>
+          <li>
+            <a
+              href="/events"
+              class="block py-2 hover:text-weegee-teal transition-colors"
+              >Events</a
+            >
+          </li>
+          <li
+            class="border-t border-weegee-black/10 pt-4 mt-2 flex flex-col gap-4"
+          >
+            <a
+              href="/about"
+              class="block hover:text-weegee-teal transition-colors">About</a
+            >
+            <a
+              href="/contact"
+              class="block hover:text-weegee-teal transition-colors">Contact</a
+            >
+            <a
+              href="/your-donations"
+              class="block bg-weegee-teal text-white px-4 py-3 rounded-full text-center hover:opacity-90 transition-opacity"
+            >
               Donate
             </a>
           </li>
@@ -81,7 +203,71 @@ const { title } = Astro.props;
       </div>
     </header>
 
-    <slot />
+    <main class=`${pageBackground} min-h-screen pb-24 font-sans`>
+      <div class="max-w-7xl mx-auto px-6">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="border-t border-weegee-black/10 py-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-5xl md:text-6xl text-weegee-black mb-4 tracking-tight font-serif"
+        >
+          Refuweegee
+          <span
+            class="text-xl md:text-2xl font-sans font-light italic opacity-40 ml-2 block md:inline tracking-normal"
+          >
+            (ref-u-wee-gee)
+          </span>
+        </h2>
+        <p
+          class="text-lg md:text-xl border-l-4 border-weegee-teal pl-6 py-2 max-w-3xl text-weegee-black/90 leading-relaxed"
+        >
+          A person who upon arrival in Glasgow is embraced by the people of the
+          city, considered to be local.
+        </p>
+        <p class="font-serif text-lg text-weegee-teal italic mt-4">
+          "We're all fae somewhere"
+        </p>
+      </div>
+    </footer>
+
+    <!-- Sticky action bar -->
+    <div
+      class="fixed bottom-6 left-1/2 -translate-x-1/2 w-11/12 max-w-lg bg-weegee-teal text-black rounded-full py-2 px-8 shadow-2xl flex justify-between items-center z-50 border-2 border-white/20 backdrop-blur-sm"
+    >
+      <a href="/your-donations" class="flex flex-col items-center gap-1 group">
+        <img
+          src="/assets/svgs/donate.svg"
+          alt=""
+          class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
+        />
+        <span class="text-[10px] uppercase tracking-widest font-bold"
+          >Donate</span
+        >
+      </a>
+      <a href="/copy-of-about" class="flex flex-col items-center gap-1 group">
+        <img
+          src="/assets/svgs/volunteer.svg"
+          alt=""
+          class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
+        />
+        <span class="text-[10px] uppercase tracking-widest font-bold"
+          >Volunteer</span
+        >
+      </a>
+      <a href="/copy-of-about" class="flex flex-col items-center gap-1 group">
+        <img
+          src="/assets/svgs/partners.svg"
+          alt=""
+          class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
+        />
+        <span class="text-[10px] uppercase tracking-widest font-bold"
+          >Partners</span
+        >
+      </a>
+    </div>
 
     <script>
       const toggle = document.getElementById("menu-toggle");

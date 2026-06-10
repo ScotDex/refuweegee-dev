@@ -4,7 +4,7 @@
   /* Brand palette — style guide: black, white, teal */
   --color-weegee-black: #000000;
   --color-weegee-white: #ffffff;
-  --color-weegee-teal: #00a19a;
+  --color-weegee-teal: #01b1af;
   --color-weegee-yellow: #fbdf64;
 
   --font-sans: "Avenir", ui-sans-serif, system-ui, sans-serif;
@@ -31,6 +31,31 @@
   html {
     font-size: 18px;
     color: #000000;
+    scroll-behavior: smooth;
+  }
+
+  @media (max-width: 767px) {
+    html {
+      scroll-snap-type: y proximity;
+    }
+    main > section {
+      scroll-snap-align: start;
+    }
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-weegee-teal);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
 
   /* Headings: Baskerville Semibold, kerning reduced */
@@ -51,5 +76,6 @@
   body,
   p {
     font-weight: 300;
+    margin-bottom: 16px;
   }
 }

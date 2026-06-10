@@ -1,0 +1,169 @@
+---
+import Layout from "../components/Layout.astro";
+// ============================================================================
+// CONTENTFUL DUMMY DATA STRUCTURES
+// ============================================================================
+const heroSection = {
+  title: "Refuweegee",
+  pronunciation: "ref-u-wee-gee",
+  definition: "A person who upon arrival in Glasgow is embraced by the people of the city, considered to be local.",
+  tagline: "We're all fae somewhere"
+};
+
+const bentoBlocks = [
+  {
+    id: "block-1",
+    type: "story-large",
+    title: "Community Stories",
+    subtitle: "Read letters fae a local",
+    image: "/path-to-letter-photo.jpg",
+    link: "/stories",
+    colSpan: "md:col-span-2 md:row-span-2"
+  },
+  {
+    id: "block-2",
+    type: "feature-teal",
+    title: "Welcome Packs",
+    subtitle: "Building connections since 2015",
+    link: "/safe-with-me",
+    colSpan: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: "block-3",
+    type: "stat-yellow",
+    title: "1,500+",
+    subtitle: "Packs delivered this month",
+    link: "#",
+    colSpan: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: "block-4",
+    type: "image-standard",
+    title: "Our Hub Activities",
+    image: "/path-to-hub-books.jpg",
+    link: "/get-involved",
+    colSpan: "md:col-span-2 md:row-span-1"
+  }
+];
+
+const sidebarContent = {
+  title: "Urgent Items Needed",
+  description: "Your support allows us to provide community-led assistance to individuals arriving in the city.",
+  items: ["Toiletries (Shampoo, Toothbrushes)", "Local treats (Tunnock's!)", "Warm jackets & footwear"],
+  ctaText: "See Drop-off Points",
+  ctaLink: "/safe-with-me"
+};
+---
+
+<Layout title={`${heroSection.title} | ${heroSection.tagline}`}>
+  <!-- Context Match: Uses the default global color and font-sans defaults from base -->
+  <main class="min-h-screen pb-32">
+    
+
+
+    <!-- 2. TWO-COLUMN LAYOUT SYSTEM -->
+    <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+      
+      <!-- LEFT CONTAINER: HOME PAGE BENTO GRID -->
+      <div class="lg:col-span-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[240px]">
+          
+          {bentoBlocks.map((block) => {
+            if (block.type === 'story-large') {
+              return (
+                <div class={`${block.colSpan} bg-weegee-black rounded-3xl overflow-hidden relative group border border-weegee-black/5`}>
+                  <div class="absolute inset-0 bg-gradient-to-t from-weegee-black/90 via-weegee-black/40 to-transparent z-10"></div>
+                  <div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-500" style={`background-image: url('${block.image}');`}></div>
+                  
+                  <div class="absolute bottom-8 left-8 right-8 z-20 text-weegee-white flex justify-between items-end">
+                    <div>
+                      <h1 class="text-3xl mb-1 text-weegee-white">{block.title}</h1>
+                      <p class="text-sm opacity-90 font-light">{block.subtitle}</p>
+                    </div>
+                    <a href={block.link} class="h-10 w-10 bg-weegee-white/20 hover:bg-weegee-white/40 rounded-full flex items-center justify-center transition-colors text-weegee-white">▶</a>
+                  </div>
+                </div>
+              );
+            }
+
+            if (block.type === 'feature-teal') {
+              return (
+                <div class={`${block.colSpan} bg-weegee-teal rounded-3xl p-8 flex flex-col justify-between text-weegee-white hover:shadow-xl transition-shadow duration-300`}>
+                  <div>
+                    <h1 class="text-2xl mb-2 text-weegee-white">{block.title}</h1>
+                    <p class="text-sm font-light opacity-90">{block.subtitle}</p>
+                  </div>
+                  <a href={block.link} class="h-10 w-10 bg-weegee-white/20 hover:bg-weegee-white text-weegee-teal rounded-full flex items-center justify-center transition-all self-start">▶</a>
+                </div>
+              );
+            }
+
+            if (block.type === 'stat-yellow') {
+              return (
+                <div class={`${block.colSpan} bg-weegee-yellow rounded-3xl p-8 flex flex-col justify-center text-weegee-black hover:shadow-xl transition-shadow duration-300`}>
+                  <h1 class="text-5xl mb-1">{block.title}</h1>
+                  <p class="text-sm font-medium opacity-80">{block.subtitle}</p>
+                </div>
+              );
+            }
+
+            if (block.type === 'image-standard') {
+              return (
+                <div class={`${block.colSpan} bg-weegee-white rounded-3xl overflow-hidden relative border border-weegee-black/5 group`}>
+                  <div class="absolute inset-0 bg-cover bg-center group-hover:scale-102 transition-transform duration-300" style={`background-image: url('${block.image}');`}></div>
+                </div>
+              );
+            }
+          })}
+
+        </div>
+      </div>
+
+      <!-- RIGHT CONTAINER: SIDEBAR CONTAINER -->
+      <div class="lg:col-span-1">
+        <div class="bg-weegee-white p-8 rounded-3xl border border-weegee-black/10 sticky top-6 flex flex-col justify-between min-h-[450px] shadow-sm">
+          <div>
+            <!-- Custom heading rule inherits h2 font specs dynamically -->
+            <h2 class="text-3xl text-weegee-black mb-4 border-b pb-4 border-weegee-black/5">
+              {sidebarContent.title}
+            </h2>
+            <p class="text-sm text-weegee-black/70 mb-6 leading-relaxed">
+              {sidebarContent.description}
+            </p>
+            
+            <ul class="space-y-3 text-sm text-weegee-black/90 pl-1">
+              {sidebarContent.items.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-weegee-teal mt-0.5">✔</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <a href={sidebarContent.ctaLink} class="block w-full bg-weegee-teal hover:bg-weegee-teal/90 text-weegee-white font-bold py-4 px-6 rounded-2xl text-center shadow-md transition-all hover:-translate-y-[1px]">
+            {sidebarContent.ctaText}
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 3. STICKY FLOATING ACTION BAR -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-weegee-teal text-weegee-white rounded-full py-3 px-6 shadow-2xl flex justify-between items-center z-50 border border-weegee-white/10 backdrop-blur-md">
+      <a href="/donate" class="flex flex-col items-center gap-0.5 group">
+        <span class="text-lg group-hover:scale-110 transition-transform">⭐</span>
+        <span class="text-[9px] uppercase tracking-wider font-bold">Donate</span>
+      </a>
+      <a href="/get-involved" class="flex flex-col items-center gap-0.5 group">
+        <span class="text-lg group-hover:scale-110 transition-transform">🤝</span>
+        <span class="text-[9px] uppercase tracking-wider font-bold">Volunteer</span>
+      </a>
+      <a href="/make-a-referral" class="flex items-center gap-2 bg-weegee-white text-weegee-teal px-4 py-2 rounded-full shadow-sm hover:scale-102 transition-transform">
+        <span class="text-md">👥</span>
+        <span class="text-[10px] uppercase tracking-widest font-bold">Partners</span>
+      </a>
+    </div>
+
+  </main>
+</Layout>
