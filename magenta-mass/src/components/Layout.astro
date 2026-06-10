@@ -204,6 +204,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
     </header>
 
     <main class=`${pageBackground} min-h-screen pb-24 font-sans`>
+      <slot name="banner" />
       <div class="max-w-7xl mx-auto px-6">
         <slot />
       </div>

@@ -62,14 +62,29 @@
   h1 {
     font-family: "Baskerville", serif;
     font-weight: 600;
+    font-size: 3.11rem;
     letter-spacing: -0.02em;
   }
 
   /* Subheadings: Avenir Light, kerning increased */
-  h2,
+  h2 {
+    font-family: "Avenir", sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+  }
+
   h3 {
     font-family: "Avenir", sans-serif;
     font-weight: 300;
+    font-size: 1.33rem;
+    letter-spacing: 0.02em;
+  }
+
+  h4 {
+    font-family: "Avenir", sans-serif;
+    font-weight: 300;
+    font-size: 1.11rem;
     letter-spacing: 0.02em;
   }
 
