@@ -1,111 +1,117 @@
 ---
 import Layout from "../components/Layout.astro";
-import Grid from "../components/Grid.astro";
 import PageBanner from "../components/PageBanner.astro";
 ---
 
 <Layout title="Get involved">
   <PageBanner slot="banner" title="Volunteering" />
-  <div class="my-8 flex flex-col">
-    <Grid>
-      <div class="lg:col-span-3 flex flex-col justify-center">
-        <div
-          class="bg-weegee-teal rounded-3xl p-2 flex flex-col justify-start gap-3 md:col-span-2 group cursor-pointer no-underline transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
-        >
-          <img
-            src="/assets/pens.webp"
-            alt="Coloured pens and art materials"
-            class="w-full h-full object-cover rounded-2xl"
-            loading="lazy"
-          />
-        </div>
+
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div
+      class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto md:auto-rows-[280px]"
+    >
+      <div
+        class="md:col-span-5 md:row-span-2 rounded-3xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2 group cursor-pointer transition-transform duration-500 hover:-translate-y-1 relative"
+      >
+        <img
+          src="/assets/pens.webp"
+          alt="Coloured pens and art materials"
+          class="w-full h-full object-cover rounded-2xl"
+          loading="lazy"
+        />
       </div>
-      <div class="lg:col-span-5 my-12 flex flex-col justify-center">
-        <p>
+
+      <div
+        class="md:col-span-7 md:row-span-2 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
+      >
+        <h2
+          class="text-3xl text-weegee-teal font-serif border-b pb-2 border-weegee-teal/10"
+        >
+          Join us!
+        </h2>
+        <p class="text-base leading-relaxed">
           We can't do what we do without you. We need you to join us: whether
           it's for an hour, an event or a weekend, you will help make a huge
           difference to us and the people that we welcome.
         </p>
-        <p>
+        <p class="text-base leading-relaxed">
           Volunteering roles available can change week to week, depending on the
-          need and availability. For the most up to date list of volunteering
-          opportunities available or more information on volunteering generally
-          the best first step is to email us at <a
+          need and availability. For the most up to date list or more
+          information, the best first step is to email us at
+          <a
             href="mailto:volunteering@refuweegee.co.uk"
-            >volunteering@refuweegee.co.uk</a
-          >.
+            class="text-weegee-teal underline font-bold"
+          >
+            volunteering@refuweegee.co.uk
+          </a>.
         </p>
-        <p>
-          We regularly run events at George Square and they are an excellent way
-          to get familiar with our space and meet our team of staff and
-          volunteers. We encourage everyone to use our space before volunteering
-          in it!
+        <p class="text-sm italic text-weegee-black/70">
+          We regularly run events at George Square—an excellent way to get
+          familiar with our space! We encourage everyone to use our space before
+          volunteering in it.
         </p>
       </div>
-    </Grid>
 
-    <Grid />
-
-    <Grid>
       <div
-        class="lg:col-span-5 my-12 lg:col-start-4 flex flex-col justify-center"
+        class="md:col-span-8 md:row-span-1 bg-weegee-yellow rounded-3xl p-8 border-2 border-weegee-yellow flex flex-col justify-center"
       >
-        <h2 class="mb-4">Volunteer social</h2>
-        <p>
+        <h2 class="text-2xl text-weegee-black font-serif mb-2">
+          Volunteer social
+        </h2>
+        <p class="text-base leading-relaxed">
           Every 6 weeks we get together to celebrate all things volunteering!
-          Its a great mix of new volunteers, long serving volunteers and people
+          It's a great mix of new volunteers, long serving volunteers and people
           who have never volunteered but want to know more! To find out the date
           of our next social just follow the link to our Events page.
         </p>
       </div>
-      <div class="lg:col-span-3 flex flex-col justify-center">
-        <div
-          class="bg-weegee-teal rounded-3xl p-2 flex flex-col justify-start gap-3 md:col-span-2 group cursor-pointer no-underline transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
-        >
-          <img
-            src="/assets/group.webp"
-            alt="Coloured pens and art materials"
-            class="w-full h-full object-cover rounded-2xl"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </Grid>
 
-    <Grid>
-      <div class="lg:col-span-3 flex flex-col justify-center">
-        <div
-          class="bg-weegee-teal rounded-3xl p-2 flex flex-col justify-start gap-3 md:col-span-2 group cursor-pointer no-underline transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
-        >
-          <img
-            src="/assets/drawing.webp"
-            alt="Coloured pens and art materials"
-            class="w-full h-full object-cover rounded-2xl"
-            loading="lazy"
-          />
-        </div>
+      <div
+        class="md:col-span-4 md:row-span-1 rounded-3xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2 group cursor-pointer transition-transform duration-500 hover:-translate-y-1 relative"
+      >
+        <img
+          src="/assets/group.webp"
+          alt="Volunteers grouping together"
+          class="w-full h-full object-cover rounded-2xl"
+          loading="lazy"
+        />
       </div>
-      <div class="lg:col-span-5 my-12 flex flex-col justify-center">
-        <h2 class="mb-4">Corporate volunteering</h2>
-        <p>
+
+      <div
+        class="md:col-span-4 md:row-span-2 rounded-3xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2 group cursor-pointer transition-transform duration-500 hover:-translate-y-1 relative"
+      >
+        <img
+          src="/assets/drawing.webp"
+          alt="Artistic welcoming drawing"
+          class="w-full h-full object-cover rounded-2xl"
+          loading="lazy"
+        />
+      </div>
+
+      <div
+        class="md:col-span-8 md:row-span-2 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
+      >
+        <h2
+          class="text-2xl text-weegee-black font-serif border-b pb-2 border-weegee-teal/10"
+        >
+          Corporate volunteering
+        </h2>
+        <p class="text-base leading-relaxed">
           We are constantly blown away by the positive impact teams of corporate
           volunteers can make in just one day. We love seeing groups come
           together to make a difference and regularly host teams of up to 12
-          people, who dedicate their volunteering hours to helping us run core
-          services and create a safe and welcoming space for all.
+          people, who dedicate their hours to helping us run core services.
         </p>
-        <p>
+        <p class="text-base leading-relaxed">
           Whether it is sorting clothing donations, assisting customers in our
           free shop or simply making someone a cuppa and giving them a chance to
-          practice their English - there are volunteering roles suited to
-          everyone!
+          practice their English - there are roles suited to everyone!
         </p>
-        <p>
-          If your team would like to spend some time supporting our mission at
-          Refuweegee, please get in touch with Lily our Corporate Relations
-          Coordinator at volunteering@refuweegee.co.uk
+        <p class="text-sm font-medium text-weegee-teal">
+          If your team would like to support us, get in touch with Lily, our
+          Corporate Relations Coordinator, at volunteering@refuweegee.co.uk
         </p>
       </div>
-    </Grid>
+    </div>
   </div>
 </Layout>
