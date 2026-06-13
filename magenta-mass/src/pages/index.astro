@@ -3,123 +3,152 @@ import Layout from "../components/Layout.astro";
 ---
 
 <Layout title="Refuweegee | We're All Fae Somewhere">
-    <!-- Bento Grid Layout -->
-    <section class="pt-12 pb-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
-        <!-- Large top story card -->
-        <a
-          href="/your-words"
-          class="md:col-span-2 md:row-span-2 bg-white rounded-3xl overflow-hidden relative group border border-weegee-black/5 transition-transform duration-500 ease-in-out hover:-translate-y-1"
+  <!-- Bento Grid Layout -->
+  <section class="pt-12 pb-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+      <!-- Large top story card -->
+      <a
+        href="/your-words"
+        class="md:col-span-2 md:row-span-2 bg-white rounded-3xl overflow-hidden relative group border border-weegee-black/5 transition-transform duration-500 ease-in-out hover:-translate-y-1"
+      >
+        <img
+          src="/assets/letter.webp"
+          alt="A handwritten community letter"
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-linear-to-t from-weegee-black/90 via-weegee-black/40 to-transparent"
         >
-          <img
-            src="/assets/letter.webp"
-            alt="A handwritten community letter"
-            class="w-full h-full object-cover"
-          />
-          <div
-            class="absolute inset-0 bg-linear-to-t from-weegee-black/90 via-weegee-black/40 to-transparent"
+        </div>
+        <div class="absolute bottom-8 left-8 right-8 text-white">
+          <h1 class="text-3xl">Community stories</h1>
+          <p class="text-lg">Read letters fae a local</p>
+        </div>
+        <div
+          class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-white/20 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110"
+        >
+          <svg
+            class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="white"
+            aria-hidden="true"><polygon points="5,3 19,12 5,21"></polygon></svg
           >
-          </div>
-                    <div class="absolute bottom-8 left-8 right-8 text-white">
-            <h1 class="font-serif text-3xl">Community stories</h1>
-            <p class="text-lg">Read letters fae a local</p>
-          </div>
-          <div class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-white/20 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </a>
+        </div>
+      </a>
 
       <!-- Action teal card -->
-        <div
-          class="bg-weegee-yellow rounded-3xl p-8 flex flex-col justify-center gap-3 md:col-span-2 md:col-start-3 group no-underline relative"
-        >
-     
-          <p class="lg:text-lg font-bold">Refuweegee is a community-led charity that helps locals welcome and support those arriving in Scotland. When people are forced to flee their homes, we make sure they get a warm welcome and the essentials they need to feel at home.</p>
-
+      <div
+        class="bg-weegee-yellow rounded-3xl p-8 flex flex-col justify-center gap-3 md:col-span-2 md:col-start-3 group no-underline relative"
+      >
+        <p class="lg:text-lg font-bold">
+          Refuweegee is a community-led charity that helps locals welcome and
+          support those arriving in Scotland. When people are forced to flee
+          their homes, we make sure they get a warm welcome and the essentials
+          they need to feel at home.
+        </p>
       </div>
 
-        <!-- Info card -->
-        <div
-          class="hidden bg-weegee-yellow rounded-3xl p-8 text-black"
-        >
-          <p class="text-2xl lg:text-3xl font-serif mb-2">1,500+</p>
-          <p class="text-lg">Packs delivered this month</p>
-        </div>
-
-        <!-- Primary image — clickable left half -->
-        <a
-          href="/copy-of-about"
-          class="hidden md:flex md:col-span-1 md:col-start-3 bg-weegee-teal rounded-3xl p-8 flex-col justify-start gap-3 group transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
-        >
-          <h2 class="text-2xl font-serif">Welcome packs</h2>
-          <p class="text-lg">Building connections since 2015</p>
-          <div class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-black/10 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </a>
-
-        <!-- Primary image — static right half -->
-        <div class="hidden md:block md:col-span-1 md:col-start-4 bg-white rounded-3xl overflow-hidden border border-weegee-black/5">
-          <img
-            src="/assets/group.webp"
-            alt="Refuweegee volunteers together"
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
+      <!-- Info card -->
+      <div class="hidden bg-weegee-yellow rounded-3xl p-8 text-black">
+        <p class="text-2xl lg:text-3xl mb-2">1,500+</p>
+        <p class="text-lg">Packs delivered this month</p>
       </div>
-    </section>
 
-    <!-- section 2 -->
-    <section>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
-        <!-- Small bottom action card -->
-        <a
-          href="/your-donations"
-          class="bg-weegee-teal rounded-3xl p-8 flex flex-col justify-start gap-3 md:col-span-2 group cursor-pointer no-underline transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
-        >
-          <h2 class="text-xl lg:text-5xl uppercase">Refuweegee is 10!</h2>
-          <p class="text-lg">
-            Please help us exist for another ten by donating to our anniversary
-            fundraiser.
-          </p>
-          <div class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-black/10 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </a>
-
-        <!-- Large bottom action card -->
-        <a
-          href="/safewithme"
-          class="md:col-span-2 md:row-span-2 md:col-start-3 bg-black rounded-3xl overflow-hidden relative group border border-weegee-black/5 transition-transform duration-500 ease-in-out hover:-translate-y-1 flex flex-col"
-        >
-          <img
-            src="/assets/safe.webp"
-            alt="Safe With Me campaign poster"
-            class="flex-1 min-h-0 w-1/2 mx-auto object-contain pt-8 lg:w-3/4"
-          />
-          <div class="px-8 pt-3 pb-8 text-white shrink-0">
-            <h2 class="font-serif text-2xl lg:text-3xl">Show your support</h2>
-            <p>Get your free poster</p>
-          </div>
-          <div class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-white/20 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5" viewBox="0 0 24 24" fill="white" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
-          </div>
-        </a>
-
-        <!-- Secondary Image -->
+      <!-- Primary image — clickable left half -->
+      <a
+        href="/copy-of-about"
+        class="hidden md:flex md:col-span-1 md:col-start-3 bg-weegee-teal rounded-3xl p-8 flex-col justify-start gap-3 group transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
+      >
+        <h2 class="text-2xl">Welcome packs</h2>
+        <p class="text-lg">Building connections since 2015</p>
         <div
-          class="hidden md:block md:col-span-2 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
+          class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-black/10 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110"
         >
-          <img
-            src="/assets/pens.webp"
-            alt="Coloured pens and art materials"
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
+          <svg
+            class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"><polygon points="5,3 19,12 5,21"></polygon></svg
+          >
         </div>
+      </a>
+
+      <!-- Primary image — static right half -->
+      <div
+        class="hidden md:block md:col-span-1 md:col-start-4 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
+      >
+        <img
+          src="/assets/group.webp"
+          alt="Refuweegee volunteers together"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
-    </section>
+    </div>
+  </section>
 
+  <!-- section 2 -->
+  <section>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+      <!-- Small bottom action card -->
+      <a
+        href="/your-donations"
+        class="bg-weegee-teal rounded-3xl p-8 flex flex-col justify-start gap-3 md:col-span-2 group cursor-pointer no-underline transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
+      >
+        <h2 class="text-xl lg:text-5xl uppercase">Refuweegee is 10!</h2>
+        <p class="text-lg">
+          Please help us exist for another ten by donating to our anniversary
+          fundraiser.
+        </p>
+        <div
+          class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-black/10 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110"
+        >
+          <svg
+            class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"><polygon points="5,3 19,12 5,21"></polygon></svg
+          >
+        </div>
+      </a>
 
+      <!-- Large bottom action card -->
+      <a
+        href="/safewithme"
+        class="md:col-span-2 md:row-span-2 md:col-start-3 bg-black rounded-3xl overflow-hidden relative group border border-weegee-black/5 transition-transform duration-500 ease-in-out hover:-translate-y-1 flex flex-col"
+      >
+        <img
+          src="/assets/safe.webp"
+          alt="Safe With Me campaign poster"
+          class="flex-1 min-h-0 w-1/2 mx-auto object-contain pt-8 lg:w-3/4"
+        />
+        <div class="px-8 pt-3 pb-8 text-white shrink-0">
+          <h2 class="text-2xl lg:text-3xl">Show your support</h2>
+          <p>Get your free poster</p>
+        </div>
+        <div
+          class="absolute bottom-8 right-8 h-12 w-12 rounded-full bg-white/20 hidden lg:flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110"
+        >
+          <svg
+            class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5"
+            viewBox="0 0 24 24"
+            fill="white"
+            aria-hidden="true"><polygon points="5,3 19,12 5,21"></polygon></svg
+          >
+        </div>
+      </a>
+
+      <!-- Secondary Image -->
+      <div
+        class="hidden md:block md:col-span-2 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
+      >
+        <img
+          src="/assets/pens.webp"
+          alt="Coloured pens and art materials"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
 </Layout>
