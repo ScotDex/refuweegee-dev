@@ -8,15 +8,6 @@
   --color-weegee-yellow: #fbdf64;
 
   --font-sans: "Avenir", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Baskerville", ui-serif, Georgia, serif;
-}
-
-@font-face {
-  font-family: "Baskerville";
-  src: url("/fonts/baskerville-semibold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -58,9 +49,9 @@
     }
   }
 
-  /* Headings: Baskerville Semibold, kerning reduced */
+  /* Headings: Avenir Semibold, kerning reduced */
   h1 {
-    font-family: "Baskerville", serif;
+    font-family: "Avenir", sans-serif;
     font-weight: 600;
     font-size: 3.11rem;
     letter-spacing: -0.02em;
@@ -91,6 +82,6 @@
   body,
   p {
     font-weight: 300;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 }

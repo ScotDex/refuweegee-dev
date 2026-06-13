@@ -1,0 +1,104 @@
+---
+import Layout from "../components/Layout.astro";
+// ============================================================================
+// CONTENTFUL DUMMY DATA STRUCTURES
+// ============================================================================
+const heroSection = {
+  title: "Refuweegee",
+  pronunciation: "ref-u-wee-gee",
+  definition:
+    "A person who upon arrival in Glasgow is embraced by the people of the city, considered to be local.",
+  tagline: "We're all fae somewhere",
+};
+
+const bentoBlocks = [
+  {
+    id: "block-1",
+    type: "story-large",
+    title: "Community Stories",
+    subtitle: "Read letters fae a local",
+    image: "/path-to-letter-photo.jpg",
+    link: "/stories",
+    colSpan: "md:col-span-2 md:row-span-2",
+  },
+  {
+    id: "block-2",
+    type: "feature-teal",
+    title: "Welcome Packs",
+    subtitle: "Building connections since 2015",
+    link: "/safe-with-me",
+    colSpan: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: "block-3",
+    type: "stat-yellow",
+    title: "1,500+",
+    subtitle: "Packs delivered this month",
+    link: "#",
+    colSpan: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: "block-4",
+    type: "image-standard",
+    title: "Our Hub Activities",
+    image: "/path-to-hub-books.jpg",
+    link: "/get-involved",
+    colSpan: "md:col-span-2 md:row-span-1",
+  },
+];
+
+const sidebarContent = {
+  title: "Urgent Items Needed",
+  description:
+    "Your support allows us to provide community-led assistance to individuals arriving in the city.",
+  items: [
+    "Toiletries (Shampoo, Toothbrushes)",
+    "Local treats (Tunnock's!)",
+    "Warm jackets & footwear",
+  ],
+  ctaText: "See Drop-off Points",
+  ctaLink: "/safe-with-me",
+};
+---
+
+<Layout title={`${heroSection.title} | ${heroSection.tagline}`}>
+  <div
+    class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6"
+  >
+    <!-- Top Block: Full Width Main Event/Feature (Spans all 3 columns) -->
+    <div
+      class="md:col-span-3 bg-weegee-yellow p-8 rounded-3xl border-2 border-weegee-black flex flex-col md:flex-row gap-6 items-center"
+    >
+      <div class="flex-1">
+        <span
+          class="bg-weegee-black text-weegee-white text-xs uppercase tracking-widest px-3 py-1 rounded-full font-bold"
+          >Featured Event</span
+        >
+        <h2 class="text-4xl mt-3 mb-2">Next Volunteer Social</h2>
+        <p>
+          Join us this Friday at George Square to meet the team, have a cuppa,
+          and learn how you can get stuck in.
+        </p>
+      </div>
+      <div
+        class="w-full md:w-1/3 aspect-video bg-weegee-black rounded-2xl overflow-hidden border border-weegee-black/10"
+      >
+        <img
+          src="/assets/social-hero.webp"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Bottom Cards: Symmetrical supporting layout (1 column each) -->
+    <div class="bg-weegee-white p-6 rounded-3xl border-2 border-weegee-black">
+      <h3 class="text-lg font-bold">Clothing Drive</h3>
+    </div>
+    <div class="bg-weegee-white p-6 rounded-3xl border-2 border-weegee-black">
+      <h3 class="text-lg font-bold">Language Cafe</h3>
+    </div>
+    <div class="bg-weegee-white p-6 rounded-3xl border-2 border-weegee-black">
+      <h3 class="text-lg font-bold">Pack Building Day</h3>
+    </div>
+  </div>
+</Layout>

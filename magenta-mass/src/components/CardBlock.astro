@@ -1,0 +1,34 @@
+---
+import Card from "./Card.astro";
+
+interface CardData {
+  title: string;
+  body: string;
+  bg?: "white" | "yellow" | "teal" | "black";
+  image?: string;
+  imageAlt?: string;
+  buttonHref?: string;
+  buttonLabel?: string;
+}
+
+interface Props {
+  cards: [CardData, CardData, CardData];
+}
+
+const { cards } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {cards.map((card) => (
+    <Card
+      title={card.title}
+      bg={card.bg}
+      image={card.image}
+      imageAlt={card.imageAlt}
+      buttonHref={card.buttonHref}
+      buttonLabel={card.buttonLabel}
+    >
+      {card.body}
+    </Card>
+  ))}
+</div>

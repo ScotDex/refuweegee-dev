@@ -1,0 +1,84 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  title: string;
+  bg?: "white" | "yellow" | "teal" | "black";
+  image?: string;
+  imageAlt?: string;
+  buttonHref?: string;
+  buttonLabel?: string;
+}
+
+const {
+  title,
+  bg = "white",
+  image,
+  imageAlt = "",
+  buttonHref,
+  buttonLabel,
+} = Astro.props;
+
+const cardStyles = {
+  white: {
+    card: "bg-weegee-white border-weegee-teal",
+    heading: "text-weegee-teal border-weegee-teal/10",
+    text: "text-weegee-black",
+  },
+  yellow: {
+    card: "bg-weegee-yellow border-weegee-yellow",
+    heading: "text-weegee-black border-weegee-black/10",
+    text: "text-weegee-black",
+  },
+  teal: {
+    card: "bg-weegee-teal border-weegee-teal",
+    heading: "text-weegee-black border-weegee-black/10",
+    text: "text-weegee-black",
+  },
+  black: {
+    card: "bg-weegee-black border-weegee-black",
+    heading: "text-weegee-white border-white/10",
+    text: "text-weegee-white",
+  },
+}[bg];
+
+const buttonProps = {
+  white: { bg: "teal" as const, color: "white" as const },
+  yellow: { bg: "white" as const, color: "black" as const },
+  teal: { bg: "white" as const, color: "black" as const },
+  black: { bg: "teal" as const, color: "white" as const },
+}[bg];
+---
+
+<div class={`${cardStyles.card} rounded-3xl border-2 flex flex-col gap-4 p-4`}>
+  {
+    image && (
+      <div class="rounded-2xl overflow-hidden h-48 flex items-center justify-center">
+        <img
+          src={image}
+          alt={imageAlt}
+          class="w-full h-full object-contain"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
+  <div class="flex flex-col flex-1 gap-2 px-2 pb-2">
+    <h2 class={`text-2xl ${cardStyles.heading} border-b pb-2`}>{title}</h2>
+    <div class={`text-base leading-relaxed ${cardStyles.text}`}>
+      <slot />
+    </div>
+    {
+      buttonHref && buttonLabel && (
+        <div class="mt-auto pt-2">
+          <Button
+            href={buttonHref}
+            label={buttonLabel}
+            bg={buttonProps.bg}
+            color={buttonProps.color}
+          />
+        </div>
+      )
+    }
+  </div>
+</div>

@@ -1,0 +1,90 @@
+---
+import Layout from "../components/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import CardBlock from "../components/CardBlock.astro";
+---
+
+<Layout title="Make a referral">
+  <PageBanner
+    slot="banner"
+    title="Make a referral"
+    background="bg-weegee-teal"
+  />
+
+  <div class="pt-12 flex flex-col gap-6">
+    <!-- Intro + emergency requests -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div
+        class="md:col-span-5 rounded-3xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2"
+      >
+        <img
+          src="/assets/group.webp"
+          alt="Refuweegee community"
+          class="w-full h-64 object-cover rounded-2xl"
+          loading="lazy"
+        />
+      </div>
+
+      <div
+        class="md:col-span-7 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
+      >
+        <h2
+          class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+        >
+          Working together
+        </h2>
+        <p class="text-base leading-relaxed">
+          Working alongside partners is crucial to helping us reach some of the
+          most vulnerable people in the city. You can make a referral to us
+          through one of the following ways.
+        </p>
+      </div>
+
+      <div
+        class="md:col-span-12 bg-weegee-yellow rounded-3xl p-8 border-2 border-weegee-yellow flex flex-col justify-center gap-2"
+      >
+        <h2 class="text-2xl text-weegee-black">Emergency requests</h2>
+        <p class="text-base leading-relaxed text-weegee-black">
+          We will always do everything we can to help in emergency
+          circumstances. We have a password protected request form for partner
+          organisations. If you do not have details of this please contact{" "}
+          <a
+            href="mailto:enquiries@refuweegee.co.uk"
+            class="font-bold underline"
+          >
+            enquiries@refuweegee.co.uk
+          </a>{" "}
+          or call our office on{" "}
+          <a href="tel:01414010756" class="font-bold underline">0141 401 0756</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <!-- Three service cards -->
+    <CardBlock
+      cards={[
+        {
+          title: "Hang out space",
+          image: "/assets/kid.webp",
+          imageAlt: "Hang out space",
+          body: "Open 10am - 4pm Mon - Fri (excluding Wednesdays). Wifi access, socialising, and refreshments included.",
+        },
+        {
+          title: "Shop appointments",
+          image: "/assets/shop.jpg",
+          imageAlt: "Shop at Refuweegee",
+          body: "Free clothing, household items, and food selection available by appointment.",
+        },
+        {
+          title: "Events sign-up",
+          image: "/assets/pens.webp",
+          imageAlt: "Events at Refuweegee",
+          body: "Conversation Club, Creative Club, Volunteer Socials, and more.",
+          buttonHref: "/events",
+          buttonLabel: "View upcoming events",
+        },
+      ]}
+    />
+  </div>
+</Layout>

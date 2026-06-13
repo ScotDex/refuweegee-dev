@@ -4,9 +4,13 @@ import PageBanner from "../components/PageBanner.astro";
 ---
 
 <Layout title="Get involved">
-  <PageBanner slot="banner" title="Volunteering" />
+  <PageBanner
+    slot="banner"
+    title="Volunteering"
+    background="bg-weegee-yellow"
+  />
 
-  <div class="max-w-6xl mx-auto px-6 py-12">
+  <div class="pt-12">
     <div
       class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto md:auto-rows-[280px]"
     >
@@ -25,7 +29,7 @@ import PageBanner from "../components/PageBanner.astro";
         class="md:col-span-7 md:row-span-2 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
       >
         <h2
-          class="text-3xl text-weegee-teal font-serif border-b pb-2 border-weegee-teal/10"
+          class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
         >
           Join us!
         </h2>
@@ -55,9 +59,7 @@ import PageBanner from "../components/PageBanner.astro";
       <div
         class="md:col-span-8 md:row-span-1 bg-weegee-yellow rounded-3xl p-8 border-2 border-weegee-yellow flex flex-col justify-center"
       >
-        <h2 class="text-2xl text-weegee-black font-serif mb-2">
-          Volunteer social
-        </h2>
+        <h2 class="text-2xl text-weegee-black mb-2">Volunteer social</h2>
         <p class="text-base leading-relaxed">
           Every 6 weeks we get together to celebrate all things volunteering!
           It's a great mix of new volunteers, long serving volunteers and people
@@ -92,7 +94,7 @@ import PageBanner from "../components/PageBanner.astro";
         class="md:col-span-8 md:row-span-2 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
       >
         <h2
-          class="text-2xl text-weegee-black font-serif border-b pb-2 border-weegee-teal/10"
+          class="text-2xl text-weegee-black border-b pb-2 border-weegee-teal/10"
         >
           Corporate volunteering
         </h2>

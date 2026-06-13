@@ -1,0 +1,249 @@
+---
+import Layout from "../components/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="Your donations">
+  <PageBanner
+    slot="banner"
+    title="Your donations"
+    background="bg-weegee-yellow"
+  />
+
+  <div class="pt-12 flex flex-col gap-6">
+    <!-- Intro -->
+    <div
+      class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-3"
+    >
+      <p class="leading-relaxed">
+        Welcome packs are a vital part of what we do. We rely on cash donations
+        to respond flexibly to the needs of those arriving, to raise awareness
+        of refugee rights in the local community, and to host events and
+        activities for those we welcome.
+      </p>
+    </div>
+
+    <!-- Cash donations + Gift Aid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div
+        class="md:col-span-7 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+      >
+        <h2
+          class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+        >
+          Cash donations
+        </h2>
+
+        <div class="flex flex-col gap-1">
+          <h3 class="font-semibold text-weegee-black mb-1">Bank transfer</h3>
+          <p class="">
+            <span class="font-medium">Account name:</span> Refuweegee
+          </p>
+          <p class="">
+            <span class="font-medium">Account number:</span> 74736863
+          </p>
+          <p class="">
+            <span class="font-medium">Sort code:</span> 87-37-13
+          </p>
+        </div>
+
+        <div class="flex gap-3 flex-wrap">
+          <Button
+            href="https://www.justgiving.com/refuweegee"
+            label="Donate via JustGiving"
+            bg="teal"
+            color="white"
+          />
+          <Button
+            href="https://www.paypal.com/gb/fundraiser/charity/1518428"
+            label="Donate via PayPal"
+            bg="yellow"
+            color="black"
+          />
+        </div>
+      </div>
+
+      <div
+        class="md:col-span-5 bg-weegee-teal rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
+      >
+        <img
+          src="/assets/svgs/Gift_Aid_UK_Logo.svg"
+          alt="Gift Aid UK Logo"
+          class="h-16 w-auto"
+        />
+        <h2 class="sr-only">Gift Aid</h2>
+        <p class="leading-relaxed border-t pt-8 mt-2 border-weegee-black/10">
+          If you're a UK taxpayer, you can boost your donation by 25% at no
+          extra cost through Gift Aid. Return the form to us to claim it.
+        </p>
+        <div class="mt-auto">
+          <Button
+            href="https://www.refuweegee.co.uk/_files/ugd/976dc7_e2be5974e71c4aedb083c94cf8c7b780.pdf"
+            label="Download declaration form"
+            bg="black"
+            color="white"
+          />
+        </div>
+      </div>
+
+      <!-- Items -->
+      <div class="col-span-full grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="bg-weegee-yellow rounded-3xl p-8 border-2 border-weegee-yellow flex flex-col gap-4"
+        >
+          <h2
+            class="text-2xl text-weegee-black border-b pb-2 border-weegee-black/10"
+          >
+            Items needed right now
+          </h2>
+          <ul class="leading-relaxed space-y-2 text-weegee-black">
+            <li>Baby clothing</li>
+            <li>Travel cots</li>
+            <li>Men's formal wear</li>
+            <li>Duvets</li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
+        >
+          <h2
+            class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+          >
+            Items we can take
+          </h2>
+          <ul class="leading-relaxed space-y-2">
+            <li>Welcome pack items</li>
+            <li>School bags</li>
+            <li>Snacks</li>
+            <li>Unopened toiletries</li>
+            <li>Clothing (all sizes)</li>
+            <li>Household items</li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-weegee-black rounded-3xl p-8 border-2 border-weegee-black flex flex-col gap-4"
+        >
+          <h2 class="text-2xl text-weegee-white border-b pb-2 border-white/10">
+            Items we cannot take
+          </h2>
+          <ul class="leading-relaxed space-y-2 text-weegee-white">
+            <li>Opened toiletries</li>
+            <li>Books</li>
+          </ul>
+          <p class="text-weegee-white mt-auto italic">
+            If you wouldn't give it to someone you do know, please don't give it
+            to someone you don't.
+          </p>
+        </div>
+      </div>
+
+      <!-- Furniture & bulk donations -->
+      <div
+        class="col-span-full bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+      >
+        <h2
+          class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+        >
+          Furniture & bulk donations
+        </h2>
+        <p class="leading-relaxed">
+          For furniture and large donations, please get in touch with
+          <a
+            href="mailto:ross@refuweegee.co.uk"
+            class="text-weegee-teal font-bold underline"
+          >
+            ross@refuweegee.co.uk
+          </a>.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-semibold text-weegee-teal">
+              Loved items welcome
+            </h3>
+            <ul class="leading-relaxed space-y-1">
+              <li>Double beds</li>
+              <li>Small sofas</li>
+              <li>Drawers</li>
+              <li>Tables</li>
+              <li>Soft furnishings</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-semibold text-weegee-black">
+              Please do not bring
+            </h3>
+            <ul class="leading-relaxed space-y-1">
+              <li>Ripped or damaged furniture</li>
+              <li>Dirty items</li>
+              <li>Items for waste disposal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drop-off locations -->
+      <div class="col-span-full flex flex-col gap-4">
+        <h2 class="text-3xl text-weegee-teal">Drop-off locations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-weegee-teal rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          >
+            <h3 class="text-xl font-semibold text-weegee-black">Main HQ</h3>
+            <p class="mb-0">24 George Square, G2 1EG</p>
+            <p class="">Monday - Friday, 9:30am - 5:00pm</p>
+            <p class="text-weegee-black mt-2">
+              Parking: use the Argyle Street route and call
+              <a href="tel:01414010756" class="font-bold underline">
+                0141 401 0756
+              </a>
+              from the St Vincent Street loading bay.
+            </p>
+          </div>
+
+          <div
+            class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          >
+            <h3 class="text-xl font-semibold text-weegee-teal">
+              Alternative office
+            </h3>
+            <p class="mb-0">51 Cadogan Street, G2 7HF</p>
+            <p class="">Fridays, 10am–3pm</p>
+          </div>
+
+          <div
+            class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          >
+            <h3 class="text-xl font-semibold text-weegee-teal">Vanilla Ink</h3>
+            <p class="mb-0">3rd Floor, 60 Brook Street, Glasgow G40 2AB</p>
+            <p class="">Monday - Friday, 10am - 6pm</p>
+            <a
+              href="tel:01415886073"
+              class="text-weegee-teal font-bold underline mt-1"
+            >
+              0141 588 6073
+            </a>
+          </div>
+
+          <div
+            class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          >
+            <h3 class="text-xl font-semibold text-weegee-teal">
+              Glasgow City Heritage Trust
+            </h3>
+            <p class="mb-0">54 Bell Street, Glasgow G1 1LQ</p>
+            <p class="">Monday - Friday, 10am = 4pm</p>
+            <a
+              href="tel:01415521331"
+              class="text-weegee-teal font-bold underline mt-1"
+            >
+              0141 552 1331
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
