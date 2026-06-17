@@ -5,11 +5,11 @@ import Layout from "../components/Layout.astro";
 <Layout title="Refuweegee | We're All Fae Somewhere">
   <!-- Bento Grid Layout -->
   <section class="pt-12 pb-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[250px]">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:auto-rows-[250px]">
       <!-- Large top story card -->
       <a
         href="/your-words"
-        class="md:col-span-2 md:row-span-2 bg-white rounded-3xl overflow-hidden relative group border border-weegee-black/5 transition-transform duration-500 ease-in-out hover:-translate-y-1"
+        class="min-h-75 md:min-h-0 md:col-span-2 md:row-span-2 bg-white rounded-3xl overflow-hidden relative group border border-weegee-black/5 transition-transform duration-500 ease-in-out hover:-translate-y-1"
       >
         <img
           src="/assets/letter.webp"
@@ -40,7 +40,7 @@ import Layout from "../components/Layout.astro";
       <div
         class="bg-weegee-yellow rounded-3xl p-8 flex flex-col justify-center gap-3 md:col-span-2 md:col-start-3 group no-underline relative"
       >
-        <p class="lg:text-lg font-bold">
+        <p class="text-[16px] lg:text-lg font-bold mb-0">
           Refuweegee is a community-led charity that helps locals welcome and
           support those arriving in Scotland. When people are forced to flee
           their homes, we make sure they get a warm welcome and the essentials
@@ -57,7 +57,7 @@ import Layout from "../components/Layout.astro";
       <!-- Primary image — clickable left half -->
       <a
         href="/copy-of-about"
-        class="hidden md:flex md:col-span-1 md:col-start-3 bg-weegee-teal rounded-3xl p-8 flex-col justify-start gap-3 group transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
+        class="hidden md:flex md:col-span-2 md:col-start-3 lg:col-span-1 lg:col-start-3 bg-weegee-teal rounded-3xl p-8 flex-col justify-start gap-3 group transition-transform duration-500 ease-in-out hover:-translate-y-1 relative"
       >
         <h2 class="text-2xl">Welcome packs</h2>
         <p class="text-lg">Building connections since 2015</p>
@@ -75,7 +75,7 @@ import Layout from "../components/Layout.astro";
 
       <!-- Primary image — static right half -->
       <div
-        class="hidden md:block md:col-span-1 md:col-start-4 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
+        class="hidden lg:block lg:col-span-1 lg:col-start-4 bg-white rounded-3xl overflow-hidden border border-weegee-black/5"
       >
         <img
           src="/assets/group.webp"
