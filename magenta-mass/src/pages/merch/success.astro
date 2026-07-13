@@ -1,0 +1,27 @@
+---
+import Layout from "../../components/Layout.astro";
+import PageBanner from "../../components/PageBanner.astro";
+---
+
+<Layout title="Thank You | Refuweegee">
+  <PageBanner slot="banner" title="Thank You" background="bg-weegee-teal text-weegee-white" />
+
+  <main class="max-w-7xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-2xl font-bold font-serif mb-4">Your order is confirmed!</h2>
+    <p class="text-weegee-black/70 max-w-xl mx-auto mb-8">
+      Thanks for supporting Refuweegee. You'll receive a receipt by email shortly, and we'll
+      be in touch about delivery.
+    </p>
+    <a
+      href="/merch"
+      class="inline-block bg-weegee-black text-weegee-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-weegee-teal transition-colors"
+    >
+      Back to Shop
+    </a>
+  </main>
+</Layout>
+
+<script>
+  import { clearCart } from "../../scripts/cart";
+  clearCart();
+</script>

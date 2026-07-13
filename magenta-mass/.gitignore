@@ -13,6 +13,12 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.dev.vars
+
+# build artifacts
+.astro/
+.wrangler/
+dist/
 
 # macOS-specific files
 .DS_Store
