@@ -1,45 +1,13 @@
 ---
 import Layout from "../components/Layout.astro";
 import PageBanner from "../components/PageBanner.astro";
-
-// Contentful-ready array structure for the team profiles
-const teamMembers = [
-  {
-    name: "Selina",
-    role: "Founder & Director",
-    bio: "Always busy, always has time for those who need her.",
-    image: "/assets/team/selina.jpg",
-    accent: "bg-weegee-teal text-weegee-white"
-  },
-    {
-    name: "Hannah",
-    role: "Operations",
-    bio: "Ensuring every single welcome box has a fresh pack of Tunnock's teacakes.",
-    image: "/assets/team/hannah.jpg",
-    accent: "bg-weegee-black text-weegee-white"
-  },
-  {
-    name: "Lily",
-    role: "Donations wizard",
-    bio: "Sorting, shifting, sifting and organising like a boss.",
-    image: "/assets/team/lily.jpg",
-    accent: "bg-weegee-yellow text-weegee-black"
-  },
-
-  {
-    name: "Brogan",
-    role: "All things volunteering",
-    bio: "The master organizer behind all our wonderful corporate volunteer teams.",
-    image: "/assets/team/brogan.jpg",
-    accent: "bg-weegee-teal text-weegee-white"
-  }
-];
+import { teamMembers } from "../lib/team";
 ---
 
 <Layout title="Meet the Team">
-  <PageBanner slot="banner" title="About Us & The Team" background="bg-weegee-teal text-weegee-white" />
+  <PageBanner slot="banner" title="All about us" background="bg-weegee-teal text-weegee-white" />
 
-  <main class="max-w-7xl mx-auto px-6 py-16">
+  <main class="max-w-7xl mx-auto py-16">
     
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 items-start">
       
@@ -86,10 +54,10 @@ const teamMembers = [
           <!-- Image frame with crisp padding -->
           <div class="p-3 w-full aspect-square">
             <div class="w-full h-full bg-weegee-cream rounded-2xl overflow-hidden border border-weegee-black/5 relative">
-              <img 
-                src={member.image} 
-                alt={`${member.name} - ${member.role}`} 
-                class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+              <img
+                src={member.image}
+                alt={`${member.name} - ${member.role}`}
+                class="w-full h-full aspect-square object-cover transition-all duration-500"
                 loading="lazy"
               />
             </div>
