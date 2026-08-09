@@ -51,3 +51,6 @@ export function clearCart() {
 export function getCartCount(cart: Cart = readCart()): number {
   return Object.values(cart).reduce((sum, qty) => sum + qty, 0);
 }
+
+
+// Force redeploy
