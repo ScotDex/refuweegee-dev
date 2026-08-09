@@ -1,4 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "magenta-mass",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2026-04-15",
-  "compatibility_flags": ["nodejs_compat"]
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": { "enabled": true }
 }
