@@ -54,7 +54,7 @@ export const teamMembers: TeamMember[] = [
     name: "Ross",
     role: "Logistics Coordinator",
     bio: "Can fit three sofas, a fridge and a strong sense of purpose into one transit van.",
-    image: "/assets/team/placeholder.webp",
+    image: "/assets/team/Ross.webp",
     accent: "bg-weegee-teal text-weegee-white",
   },
   {
@@ -89,7 +89,7 @@ export const teamMembers: TeamMember[] = [
     name: "Paul",
     role: "Cleaner",
     bio: "Once mopped a floor so well the health inspector asked if he was hiring.",
-    image: "/assets/team/placeholder.webp",
+    image: "/assets/team/Paul.webp",
     accent: "bg-weegee-yellow text-weegee-black",
   },
   {
