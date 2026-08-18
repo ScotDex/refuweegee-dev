@@ -1,0 +1,22 @@
+---
+import Accordion from "../components/Accordion.astro";
+import Layout from "../components/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import { faqCategories } from "../data/faqs";
+---
+
+<Layout title="Get in touch">
+  <PageBanner
+    slot="banner"
+    title="Frequently asked questions"
+    background="bg-weegee-teal"
+  />
+
+  <div class="relative">
+    <main class="relative flex flex-col justify-center overflow-hidden">
+      <div class="w-full max-w-[100ch] py-24">
+        <Accordion items={faqCategories} id="faqs" />
+      </div>
+    </main>
+  </div>
+</Layout>

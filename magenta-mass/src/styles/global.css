@@ -40,42 +40,37 @@
     border-radius: 4px;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      transition-duration: 0.01ms !important;
-      animation-duration: 0.01ms !important;
-    }
-  }
-
-  /* Headings: Avenir Semibold, kerning reduced */
+  /* Headings: Baskerville Semibold, kerning reduced */
   h1 {
-    font-family: "Avenir", sans-serif;
+    font-family:
+      "Baskerville", "Baskerville Old Face", "Libre Baskerville", Georgia, serif;
     font-weight: 600;
-    font-size: 3.11rem;
+    font-size: 3rem; /* 54px */
     letter-spacing: -0.02em;
   }
 
-  /* Subheadings: Avenir Light, kerning increased */
+  /* Subheadings: Baskerville Light, kerning increased */
   h2 {
-    font-family: "Avenir", sans-serif;
+    font-family:
+      "Baskerville", "Baskerville Old Face", "Libre Baskerville", Georgia, serif;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 2rem; /* 36px */
     letter-spacing: 0.02em;
   }
 
   h3 {
-    font-family: "Avenir", sans-serif;
+    font-family:
+      "Baskerville", "Baskerville Old Face", "Libre Baskerville", Georgia, serif;
     font-weight: 300;
-    font-size: 1.33rem;
+    font-size: 1.5rem; /* 27px */
     letter-spacing: 0.02em;
   }
 
   h4 {
-    font-family: "Avenir", sans-serif;
+    font-family:
+      "Baskerville", "Baskerville Old Face", "Libre Baskerville", Georgia, serif;
     font-weight: 300;
-    font-size: 1.11rem;
+    font-size: 1rem; /* 18px */
     letter-spacing: 0.02em;
   }
 
