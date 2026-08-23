@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/wrangler.json",
+  // magenta-mass/wrangler.jsonc
   "name": "refuweegee-dev",
   "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2026-04-15",
@@ -10,12 +11,6 @@
   },
   "observability": { "enabled": true },
 
-  "vars": {
-    "WIX_CLIENT_ID": "d0686898-a815-4d4c-bcd9-ebac2d0e6caf"
-  },
-  "kv_namespaces": [
-    { "binding": "SESSION", "id": "895e4b0d1b334050b8272e313b0e8f3c" }
-  ],
   "routes": [
     {
       "pattern": "refuweegee.static-orbit.co.uk",
