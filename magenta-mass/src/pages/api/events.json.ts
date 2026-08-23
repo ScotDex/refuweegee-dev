@@ -15,7 +15,6 @@ export const GET: APIRoute = async () => {
   try {
     const res = await client.wixEventsV2.queryEvents().limit(100).find();
 
-    // TEMP: run once, read the real shape, then delete this line.
     console.log(JSON.stringify(res.items?.[0], null, 2));
 
     const events = (res.items ?? []).map((e: any) => ({
