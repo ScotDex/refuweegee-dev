@@ -14,6 +14,8 @@
   "dependencies": {
     "@astrojs/cloudflare": "^13.7.0",
     "@tailwindcss/vite": "^4.3.0",
+    "@wix/events": "^1.0.855",
+    "@wix/sdk": "^1.21.16",
     "astro": "^6.3.1",
     "stripe": "^22.3.1",
     "tailwindcss": "^4.3.0"
