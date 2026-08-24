@@ -15,15 +15,17 @@ export const GET: APIRoute = async () => {
   try {
     const res = await client.wixEventsV2.queryEvents().limit(100).find();
 
-    console.log(JSON.stringify(res.items?.[0], null, 2));
-
-    const events = (res.items ?? []).map((e: any) => ({
-      id: e._id,
-      title: e.title,
-      start: e.dateAndTimeSettings?.startDate,
-      location: e.location?.name,
-      url: e.eventPageUrl,
-    }));
+    const now = Date.now();
+    const events = (res.items ?? [])
+      .map((e: any) => ({
+        id: e._id,
+        title: e.title,
+        start: e.dateAndTimeSettings?.startDate,
+        location: e.location?.name,
+        url: e.eventPageUrl,
+      }))
+      .filter((e) => e.start && new Date(e.start).getTime() >= now)
+      .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
     return new Response(JSON.stringify(events), {
       headers: {

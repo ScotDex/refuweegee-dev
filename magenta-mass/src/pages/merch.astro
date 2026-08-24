@@ -10,7 +10,7 @@ import { products, formatPence } from "../data/products";
   <main class="max-w-7xl mx-auto px-6 py-16">
     <div
       id="canceled-banner"
-      class="hidden mb-8 bg-weegee-cream border-2 border-weegee-black rounded-2xl px-6 py-4 items-center justify-between gap-4"
+      class="hidden mb-8 bg-weegee-cream border-2 border-weegee-black rounded-xl px-6 py-4 items-center justify-between gap-4"
     >
       <p class="text-sm font-bold">Checkout canceled — your basket is still here.</p>
       <button id="dismiss-canceled" class="text-sm underline shrink-0 cursor-pointer">Dismiss</button>
@@ -24,7 +24,7 @@ import { products, formatPence } from "../data/products";
 
           <div>
             <!-- Image Box with a fixed aspect ratio so all product windows line up perfectly -->
-            <div class="bg-weegee-cream rounded-2xl aspect-square mb-4 overflow-hidden border border-weegee-black/5 relative">
+            <div class="bg-weegee-cream rounded-xl aspect-square mb-4 overflow-hidden border border-weegee-black/5 relative">
               <img
                 src={product.image}
                 alt={product.name}

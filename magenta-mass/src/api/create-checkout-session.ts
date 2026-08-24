@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import Stripe from "stripe";
-import { getProduct } from "../../data/products";
+import { getProduct } from "../data/products";
 
 export const prerender = false;
 

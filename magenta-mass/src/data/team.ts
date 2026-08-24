@@ -117,7 +117,7 @@ export const teamMembers: TeamMember[] = [
     name: "Imene",
     role: "Social Media & Content Creator",
     bio: "Turns a box of donated teacakes into a viral post before the kettle's even boiled.",
-    image: "/assets/team/placeholder.webp",
+    image: "/assets/team/Imene.webp",
     accent: "bg-weegee-teal text-weegee-white",
   },
 ];

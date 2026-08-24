@@ -2,6 +2,55 @@
 import Layout from "../components/Layout.astro";
 import PageBanner from "../components/PageBanner.astro";
 import Card from "../components/Card.astro";
+
+export const prerender = false;
+
+interface WixEvent {
+  id: string;
+  title: string;
+  start?: string;
+  location?: string;
+  url: string;
+}
+
+let events: WixEvent[] = [];
+try {
+  const res = await fetch(new URL("/api/events.json", Astro.url));
+  if (res.ok) {
+    events = await res.json();
+  }
+} catch (err) {
+  console.error("Failed to load events:", err);
+}
+
+const formatStart = (start?: string) => {
+  if (!start) return null;
+  const date = new Date(start);
+  if (Number.isNaN(date.getTime())) return null;
+  const datePart = date.toLocaleDateString("en-GB", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const timePart = date.toLocaleTimeString("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return `${datePart} – ${timePart}`;
+};
+
+const eventImages: [RegExp, string][] = [
+  [/knitting/i, "/assets/events/knitting.webp"],
+  [/conversation/i, "/assets/events/conversation.webp"],
+  [/pilates/i, "/assets/events/pilates.webp"],
+  [/yoga/i, "/assets/events/yoga.webp"],
+  [/storytime/i, "/assets/events/storytime.webp"],
+  [/art/i, "/assets/events/art.webp"],
+];
+
+const imageFor = (title: string) =>
+  eventImages.find(([pattern]) => pattern.test(title))?.[1];
 ---
 
 <Layout title="Events">
@@ -29,69 +78,37 @@ import Card from "../components/Card.astro";
         </p>
       </div>
       <img
-        src="/assets/group.webp"
+        src="/assets/events/events.webp"
         alt="Community group"
-        class="w-full md:w-80 h-64 object-cover rounded-2xl shrink-0"
+        class="w-full md:w-80 h-44 object-cover rounded-xl shrink-0"
       />
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <Card
-        title="Pilates with Ote"
-        bg="teal"
-        image="/assets/events/pilates.webp"
-        buttonHref="https://www.refuweegee.co.uk/events"
-        buttonLabel="Book"
-      >
-        <p class="font-semibold mb-1">Wednesday 26 June 2026 &ndash; 15:30</p>
-        <p>Refuweegee, 5th floor</p>
-        <p class="mt-2">
-          Multiple dates available. A great way to move your body and connect
-          with the community.
-        </p>
-      </Card>
-
-      <Card
-        title="Beginner friendly yoga"
-        bg="black"
-        image="/assets/events/yoga.webp"
-        buttonHref="https://www.refuweegee.co.uk/events"
-        buttonLabel="Book"
-      >
-        <p class="font-semibold mb-1">Friday 26 June 2026 &ndash; 10:00</p>
-        <p>24 George Square</p>
-        <p class="mt-2">
-          Multiple dates available. Open to all levels &ndash; no experience
-          needed.
-        </p>
-      </Card>
-
-      <Card
-        title="Knitting, nattering and needlework"
-        bg="teal"
-        image="/assets/events/knitting.webp"
-        buttonHref="https://www.refuweegee.co.uk/events"
-        buttonLabel="Book"
-      >
-        <p class="font-semibold mb-1">Friday 26 June 2026 &ndash; 10:00</p>
-        <p>24 George Square</p>
-        <p class="mt-2">Beginners welcome. Suitable for age 12 and up.</p>
-      </Card>
-
-      <Card
-        title="Singing and storytime for babies and little ones"
-        bg="black"
-        image="/assets/events/storytime.webp"
-        buttonHref="https://www.refuweegee.co.uk/events"
-        buttonLabel="Book"
-      >
-        <p class="font-semibold mb-1">Friday 26 June 2026 &ndash; 10:00</p>
-        <p>24 George Square</p>
-        <p class="mt-2">
-          Singing and storytime for parents and pre-schoolers. Join us with your
-          little ones for a relaxed storytime in our cosy playroom.
-        </p><p>Suitable for ages 5 years and under.</p>
-      </Card>
+      {
+        events.length === 0 && (
+          <p class="text-base leading-relaxed">
+            No upcoming events right now &ndash; check back soon.
+          </p>
+        )
+      }
+      {
+        events.map((event) => {
+          const when = formatStart(event.start);
+          const image = imageFor(event.title);
+          return (
+            <Card
+              title={event.title}
+              image={image}
+              buttonHref={event.url}
+              buttonLabel="Book"
+            >
+              {when && <p class="font-semibold mb-1">{when}</p>}
+              {event.location && <p>{event.location}</p>}
+            </Card>
+          );
+        })
+      }
     </div>
   </div>
 </Layout>
