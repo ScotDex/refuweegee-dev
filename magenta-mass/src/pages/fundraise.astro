@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import PageBanner from "../components/PageBanner.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Fundraise for us!">
@@ -9,4 +10,139 @@ import PageBanner from "../components/PageBanner.astro";
     title="Fundraise for us!"
     background="bg-weegee-yellow"
   />
+
+  <div class="pt-12 flex flex-col gap-6">
+    <!-- Intro -->
+    <div
+      class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-3"
+    >
+      <h2>You've always been amazing...</h2>
+      <p class="leading-relaxed">
+        Refuweegee has survived since beginning as a voluntary project in 2015
+        because of the exceptional generosity of our wonderful supporters. Each
+        year we need to raise around £750,000 and we rely on brilliant people to
+        contribute however they can.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div class="md:col-span-4">
+        <img
+          src="/assets/donations.webp"
+          alt="Gift Aid UK Logo"
+          class="w-full rounded-3xl border-2 border-weegee-teal"
+        />
+      </div>
+      <div
+        class="md:col-span-4 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+      >
+        <h3
+          class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+        >
+          From your sofa or from Ben Nevis…
+        </h3>
+
+        <div class="flex flex-col gap-1">
+          <p>
+            Everyone who donates or raises money for us is directly helping
+            those arriving here in Glasgow. You can get active and run a
+            marathon, or you can set up donations on your phone whilst watching
+            TV, whichever you prefer!
+          </p>
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <img
+          src="/assets/donations.webp"
+          alt="Gift Aid UK Logo"
+          class="w-full rounded-3xl border-2 border-weegee-teal"
+        />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div
+        class="md:col-span-7 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+      >
+        <h3
+          class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+        >
+          For the busy people...
+        </h3>
+        <div>
+          <p>
+            Setting up a direct debit means we can plan ahead with regular
+            funds. Our monthly supporters are champions and once you're set up,
+            you can relax knowing you're doing good. You can join them by
+            setting up a regular donation.
+          </p>
+          <p>
+            You can also ask your employer to donate via Payroll Giving: a
+            tax-free way of donating through your salary.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex flex-col gap-1">
+            <h4 class="text-2xl font-semibold text-weegee-black mb-1">
+              Bank transfer
+            </h4>
+            <p class="mb-0">
+              <span class="font-medium">Account name:</span> Refuweegee
+            </p>
+            <p class="mb-0">
+              <span class="font-medium">Account number:</span> 74736863
+            </p>
+            <p class="mb-0">
+              <span class="font-medium">Sort code:</span> 87-37-13
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-2xl font-semibold text-weegee-black mb-4">
+              Donate via
+            </h4>
+            <a href="https://www.justgiving.com/refuweegee">
+              <img
+                src="/assets/svgs/JustGiving.svg"
+                alt="Just Giving Logo"
+                class="h-8 w-auto mb-4 hover:brightness-0"
+              />
+            </a>
+
+            <a href="https://www.paypal.com/gb/fundraiser/charity/3299053">
+              <img
+                src="/assets/svgs/PayPal.svg"
+                alt="PayPal Logo"
+                class="h-8 w-auto hover:brightness-0"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="md:col-span-5 bg-weegee-teal rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
+      >
+        <img
+          src="/assets/svgs/Gift_Aid_UK_Logo.svg"
+          alt="Gift Aid UK Logo"
+          class="h-16 w-auto"
+        />
+        <h2 class="sr-only">Gift Aid</h2>
+        <p class="font-bold border-t pt-8 mt-2 border-weegee-black/10">
+          If you donate directly to our bank, please fill in a Gift Aid
+          declaration and we'll get a 25% top up from the UK Government, making
+          your help go even further.
+        </p>
+        <div class="mt-auto">
+          <Button
+            href="https://www.refuweegee.co.uk/_files/ugd/976dc7_e2be5974e71c4aedb083c94cf8c7b780.pdf"
+            label="Download declaration form"
+            bg="white"
+            color="black"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
