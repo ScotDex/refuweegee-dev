@@ -2,23 +2,13 @@
 import Layout from "../components/Layout.astro";
 import PageBanner from "../components/PageBanner.astro";
 import Card from "../components/Card.astro";
+import { fetchUpcomingEvents, type WixEvent } from "../lib/events";
 
 export const prerender = false;
 
-interface WixEvent {
-  id: string;
-  title: string;
-  start?: string;
-  location?: string;
-  url: string;
-}
-
 let events: WixEvent[] = [];
 try {
-  const res = await fetch(new URL("/api/events.json", Astro.url));
-  if (res.ok) {
-    events = await res.json();
-  }
+  events = await fetchUpcomingEvents();
 } catch (err) {
   console.error("Failed to load events:", err);
 }
