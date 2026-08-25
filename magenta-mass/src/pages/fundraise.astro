@@ -11,10 +11,10 @@ import Button from "../components/Button.astro";
     background="bg-weegee-yellow"
   />
 
-  <div class="pt-12 flex flex-col gap-6">
+  <div class="pt-8 xl:pt-10 flex flex-col gap-6">
     <!-- Intro -->
     <div
-      class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-3"
+      class="bg-weegee-white p-4 rounded-3xl md:p-8 border-2 border-weegee-teal flex flex-col gap-3"
     >
       <h2>You've always been amazing...</h2>
       <p class="leading-relaxed">
@@ -25,16 +25,18 @@ import Button from "../components/Button.astro";
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <div class="md:col-span-4">
+    <!-- image section -->
+    <div class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
+      <div class="hidden xl:block xl:col-span-4">
         <img
           src="/assets/donations.webp"
           alt="Gift Aid UK Logo"
           class="w-full rounded-3xl border-2 border-weegee-teal"
         />
       </div>
+
       <div
-        class="md:col-span-4 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+        class="md:col-span-4 lg:col-span-6 xl:col-span-4 bg-weegee-white rounded-3xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2 lg:gap-6"
       >
         <h3
           class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
@@ -51,7 +53,7 @@ import Button from "../components/Button.astro";
           </p>
         </div>
       </div>
-      <div class="md:col-span-4">
+      <div class="md:col-span-4 lg:col-span-6 xl:col-span-4">
         <img
           src="/assets/donations.webp"
           alt="Gift Aid UK Logo"
@@ -62,7 +64,7 @@ import Button from "../components/Button.astro";
 
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
       <div
-        class="md:col-span-7 bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+        class="md:col-span-7 bg-weegee-white rounded-3xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2 lg:gap-6"
       >
         <h3
           class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
@@ -81,7 +83,7 @@ import Button from "../components/Button.astro";
             tax-free way of donating through your salary.
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="lg:grid grid-cols-2 gap-4">
           <div class="flex flex-col gap-1">
             <h4 class="text-2xl font-semibold text-weegee-black mb-1">
               Bank transfer
@@ -97,8 +99,10 @@ import Button from "../components/Button.astro";
             </p>
           </div>
 
-          <div>
-            <h4 class="text-2xl font-semibold text-weegee-black mb-4">
+          <div class="mb-4 md:mb-0 lg:pl-4">
+            <h4
+              class="mt-8 lg:mt-0 xl:mt-6 text-2xl font-semibold text-weegee-black mb-4 lg:mb-0"
+            >
               Donate via
             </h4>
             <a href="https://www.justgiving.com/refuweegee">
@@ -121,7 +125,7 @@ import Button from "../components/Button.astro";
       </div>
 
       <div
-        class="md:col-span-5 bg-weegee-teal rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
+        class="md:col-span-5 bg-weegee-teal rounded-3xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2 lg:gap-6"
       >
         <img
           src="/assets/svgs/Gift_Aid_UK_Logo.svg"
@@ -129,12 +133,12 @@ import Button from "../components/Button.astro";
           class="h-16 w-auto"
         />
         <h2 class="sr-only">Gift Aid</h2>
-        <p class="font-bold border-t pt-8 mt-2 border-weegee-black/10">
+        <p class="font-bold border-t pt-4 md:pt-8 mt-2 border-weegee-black/10">
           If you donate directly to our bank, please fill in a Gift Aid
           declaration and we'll get a 25% top up from the UK Government, making
           your help go even further.
         </p>
-        <div class="mt-auto">
+        <div class="mx-auto">
           <Button
             href="https://www.refuweegee.co.uk/_files/ugd/976dc7_e2be5974e71c4aedb083c94cf8c7b780.pdf"
             label="Download declaration form"
