@@ -1,42 +1,32 @@
 ---
 import Layout from "../components/Layout.astro";
 import PageBanner from "../components/PageBanner.astro";
-import Button from "../components/Button.astro";
 ---
 
 <Layout title="Your donations">
-  <PageBanner
-    slot="banner"
-    title="Your donations"
-    background="bg-weegee-yellow"
-  />
+  <PageBanner slot="banner" title="Your donations">
+    <span slot="box"
+      >Welcome packs are a vital part of what we do. We rely on cash donations
+      to respond flexibly to the needs of those arriving, to raise awareness of
+      refugee rights in the local community, and to host events and activities
+      for those we welcome.</span
+    >
+  </PageBanner>
 
   <div class="pt-12 flex flex-col gap-6">
-    <!-- Intro -->
-    <div
-      class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-3"
-    >
-      <p class="leading-relaxed">
-        Welcome packs are a vital part of what we do. We rely on cash donations
-        to respond flexibly to the needs of those arriving, to raise awareness
-        of refugee rights in the local community, and to host events and
-        activities for those we welcome.
-      </p>
-    </div>
-
     <!-- Cash donations + Gift Aid -->
 
     <!-- Items -->
     <div class="col-span-full grid grid-cols-1 md:grid-cols-3 gap-6">
       <div
-        class="bg-weegee-yellow rounded-3xl p-8 border-2 border-weegee-yellow flex flex-col gap-4"
+        class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
       >
         <h2
-          class="text-2xl text-weegee-black border-b pb-2 border-weegee-black/10"
+          class="text-2xl text-weegee-teal-dark font-bold border-b pb-2 border-weegee-black/20"
         >
           Items needed right now
         </h2>
-        <ul class="leading-relaxed space-y-2 text-weegee-black">
+        <ul class="leading-relaxed space-y-2 font-medium text-weegee-black">
           <li>Baby clothing</li>
           <li>Travel cots</li>
           <li>Men's formal wear</li>
@@ -45,14 +35,14 @@ import Button from "../components/Button.astro";
       </div>
 
       <div
-        class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
+        class="bg-weegee-teal rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
       >
         <h2
-          class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+          class="text-2xl text-weegee-black font-bold border-b pb-2 border-weegee-black/20"
         >
           Items we can take
         </h2>
-        <ul class="leading-relaxed space-y-2">
+        <ul class="leading-relaxed space-y-2 font-medium">
           <li>Welcome pack items</li>
           <li>School bags</li>
           <li>Snacks</li>
@@ -63,16 +53,18 @@ import Button from "../components/Button.astro";
       </div>
 
       <div
-        class="bg-weegee-black rounded-3xl p-8 border-2 border-weegee-black flex flex-col gap-4"
+        class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-4"
       >
-        <h2 class="text-2xl text-weegee-white border-b pb-2 border-white/10">
+        <h2
+          class="text-2xl text-weegee-teal-dark font-bold border-b pb-2 border-weegee-black/20"
+        >
           Items we cannot take
         </h2>
-        <ul class="leading-relaxed space-y-2 text-weegee-white">
+        <ul class="leading-relaxed space-y-2 font-medium text-weegee-black">
           <li>Opened toiletries</li>
           <li>Books</li>
         </ul>
-        <p class="text-weegee-white mt-auto italic">
+        <p class="text-weegee-black mt-auto italic font-medium">
           If you wouldn't give it to someone you do know, please don't give it
           to someone you don't.
         </p>
@@ -81,12 +73,14 @@ import Button from "../components/Button.astro";
 
     <!-- Furniture & bulk donations -->
     <div
-      class="col-span-full bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+      class="col-span-full bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
     >
-      <h2 class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10">
+      <h2
+        class="text-2xl text-weegee-teal-dark border-b pb-2 border-weegee-teal/10"
+      >
         Furniture & bulk donations
       </h2>
-      <p class="leading-relaxed">
+      <p class="leading-relaxed font-medium">
         For furniture and large donations, please get in touch with
         <a
           href="mailto:ross@refuweegee.co.uk"
@@ -100,7 +94,7 @@ import Button from "../components/Button.astro";
           <h3 class="text-lg font-semibold text-weegee-teal">
             Loved items welcome
           </h3>
-          <ul class="leading-relaxed space-y-1">
+          <ul class="leading-relaxed space-y-1 font-medium">
             <li>Double beds</li>
             <li>Small sofas</li>
             <li>Drawers</li>
@@ -112,7 +106,7 @@ import Button from "../components/Button.astro";
           <h3 class="text-lg font-semibold text-weegee-black">
             Please do not bring
           </h3>
-          <ul class="leading-relaxed space-y-1">
+          <ul class="leading-relaxed space-y-1 font-medium">
             <li>Ripped or damaged furniture</li>
             <li>Dirty items</li>
             <li>Items for waste disposal</li>
@@ -123,14 +117,14 @@ import Button from "../components/Button.astro";
 
     <!-- Drop-off locations -->
     <div class="col-span-full flex flex-col gap-4">
-      <h2 class="text-3xl text-weegee-teal">Drop-off locations</h2>
+      <h2 class="text-xl text-weegee-teal">Drop-off locations</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
-          class="bg-weegee-teal rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          class="bg-weegee-teal rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
         >
           <h3 class="text-xl font-semibold text-weegee-black">Main HQ</h3>
           <p class="mb-0">24 George Square, G2 1EG</p>
-          <p class="">Monday - Friday, 9:30am - 5:00pm</p>
+          <p>Monday - Friday, 9:30am - 5:00pm</p>
           <p class="text-weegee-black mt-2">
             Parking: use the Argyle Street route and call
             <a href="tel:01414010756" class="font-bold underline">
@@ -141,17 +135,17 @@ import Button from "../components/Button.astro";
         </div>
 
         <div
-          class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
         >
           <h3 class="text-xl font-semibold text-weegee-teal">
             Alternative office
           </h3>
-          <p class="mb-0">51 Cadogan Street, G2 7HF</p>
+          <p class="mb-0 font-normal">51 Cadogan Street, G2 7HF</p>
           <p class="">Fridays, 10am–3pm</p>
         </div>
 
         <div
-          class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
         >
           <h3 class="text-xl font-semibold text-weegee-teal">Vanilla Ink</h3>
           <p class="mb-0">3rd Floor, 60 Brook Street, Glasgow G40 2AB</p>
@@ -165,7 +159,7 @@ import Button from "../components/Button.astro";
         </div>
 
         <div
-          class="bg-weegee-white rounded-3xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+          class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
         >
           <h3 class="text-xl font-semibold text-weegee-teal">
             Glasgow City Heritage Trust

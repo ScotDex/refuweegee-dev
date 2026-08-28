@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import DropdownIcon from "./DropdownIcon.astro";
 
 interface Props {
   title: string;
@@ -21,8 +22,63 @@ const { title, pageBackground = "bg-white" } = Astro.props;
   </head>
   <body class="bg-white text-weegee-black antialiased font-sans">
     <header class="border-b border-weegee-black/10 relative">
+      <!-- Utility bar -->
+      <div
+        class="hidden md:flex justify-end items-center gap-4 max-w-7xl mx-auto px-6 pt-4 text-[20px]"
+      >
+        <div class="w-24 flex justify-center">
+          <a
+            href="/contact"
+            class="font-bold hover:text-[#019391] transition-colors">Contact</a
+          >
+        </div>
+        <div class="w-24 flex items-center justify-center gap-3">
+          <a
+            href="https://www.facebook.com/refuweegee"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Refuweegee on Facebook"
+            class="text-weegee-black hover:text-weegee-teal transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-8 h-8"
+              aria-hidden="true"
+            >
+              <path
+                d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/refuweegee"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Refuweegee on Instagram"
+            class="text-weegee-black hover:text-weegee-teal transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-8 h-8"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2c-2.716 0-3.056.012-4.123.06-1.064.05-1.792.218-2.428.465a4.902 4.902 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.415 1.364-.465 2.428C2.012 8.944 2 9.284 2 12s.012 3.056.06 4.123c.05 1.064.218 1.792.465 2.428a4.902 4.902 0 0 0 1.153 1.772 4.902 4.902 0 0 0 1.772 1.153c.636.247 1.364.415 2.428.465C8.944 21.988 9.284 22 12 22s3.056-.012 4.123-.06c1.064-.05 1.792-.218 2.428-.465a4.902 4.902 0 0 0 1.772-1.153 4.902 4.902 0 0 0 1.153-1.772c.247-.636.415-1.364.465-2.428.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.05-1.064-.218-1.792-.465-2.428a4.902 4.902 0 0 0-1.153-1.772A4.902 4.902 0 0 0 18.551.525c-.636-.247-1.364-.415-2.428-.465C15.056.012 14.716 0 12 0Zm0 2.162c2.67 0 2.986.01 4.04.059.976.045 1.505.207 1.858.344.467.182.8.399 1.15.748.35.35.566.683.748 1.15.137.353.3.882.344 1.857.048 1.055.059 1.37.059 4.041 0 2.67-.01 2.986-.059 4.04-.045.976-.207 1.505-.344 1.858a3.09 3.09 0 0 1-.748 1.15 3.09 3.09 0 0 1-1.15.748c-.353.137-.882.3-1.857.344-1.054.048-1.37.059-4.041.059-2.67 0-2.987-.01-4.04-.059-.976-.045-1.505-.207-1.858-.344a3.09 3.09 0 0 1-1.15-.748 3.09 3.09 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857-.048-1.055-.059-1.37-.059-4.041 0-2.67.01-2.986.059-4.04.045-.976.207-1.505.344-1.858.182-.467.399-.8.748-1.15.35-.35.683-.566 1.15-.748.353-.137.882-.3 1.857-.344 1.055-.048 1.37-.059 4.041-.059Z"
+              ></path>
+              <path
+                d="M12 15.333a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM18.538 6.462a1.167 1.167 0 1 1-2.333 0 1.167 1.167 0 0 1 2.333 0Z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
       <nav
-        class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-6 pb-8 pt-2 flex items-center justify-between"
       >
         <a href="/">
           <img
@@ -33,68 +89,135 @@ const { title, pageBackground = "bg-white" } = Astro.props;
         </a>
 
         <!-- Desktop nav -->
-        <ul class="hidden lg:flex items-center gap-6 text-sm font-sans">
+        <ul class="hidden lg:flex items-center gap-6 text-lg font-sans">
+          <li class="relative group">
+            <!-- Who we are -->
+            <button
+              class="flex items-center gap-1 py-2 font-bold hover:text-[#019391] transition-colors"
+            >
+              Who we are
+              <DropdownIcon />
+            </button>
+            <ul
+              class="absolute left-0 top-full w-max bg-white border border-weegee-black/10 rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50"
+            >
+              <li>
+                <a
+                  href="/meet-the-team"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >Meet the team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/faqs"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="relative group">
+            <!-- What we do -->
+            <button
+              class="flex items-center gap-1 py-2 font-bold hover:text-[#019391] transition-colors"
+            >
+              What we do
+              <DropdownIcon />
+            </button>
+            <ul
+              class="absolute left-0 top-full w-max bg-white border border-weegee-black/10 rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50"
+            >
+              <li>
+                <a
+                  href="/merch"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >Merch</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/shop"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >The shop (referral only)</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="relative group">
+            <!-- Get involved -->
+            <button
+              class="flex items-center gap-1 py-2 font-bold hover:text-[#019391] transition-colors"
+            >
+              Get involved
+              <DropdownIcon />
+            </button>
+            <ul
+              class="absolute left-0 top-full w-max bg-white border border-weegee-black/10 rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50"
+            >
+              <li>
+                <a
+                  href="/volunteering"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >Volunteering</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/fundraise"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >Fundraise for us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/referrals"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >Make a referral</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/your-donations"
+                  class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                  >Your donations</a
+                >
+              </li>
+            </ul>
+          </li>
+
           <li>
             <a
               href="/safe-with-me"
-              class="block py-2 hover:text-weegee-teal transition-colors"
+              class="block py-2 font-bold hover:text-[#019391] transition-colors"
               >Safe With Me</a
             >
           </li>
           <li>
             <a
-              href="/get-involved"
-              class="block py-2 hover:text-weegee-teal transition-colors"
-              >Get involved</a
-            >
-          </li>
-          <li>
-            <a
-              href="/fundraise"
-              class="block py-2 hover:text-weegee-teal transition-colors"
-              >Fundraise for us</a
-            >
-          </li>
-          <li>
-            <a
-              href="/referrals"
-              class="block py-2 hover:text-weegee-teal transition-colors"
-              >Make a referral</a
-            >
-          </li>
-          <li>
-            <a
-              href="/shop"
-              class="block py-2 hover:text-weegee-teal transition-colors"
-              >Shop</a
-            >
-          </li>
-          <li>
-            <a
               href="/events"
-              class="block py-2 hover:text-weegee-teal transition-colors"
+              class="block py-2 font-bold hover:text-[#019391] transition-colors"
               >Events</a
             >
           </li>
         </ul>
-        <ul class="hidden md:flex items-center gap-4 text-sm">
+
+        <ul class="hidden md:flex items-center gap-4 text-4">
           <li>
-            <a href="/about" class="hover:text-weegee-teal transition-colors"
-              >About</a
-            >
-          </li>
-          <li>
-            <a href="/contact" class="hover:text-weegee-teal transition-colors"
-              >Contact</a
+            <a
+              href="/merch"
+              class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal text-black font-bold leading-none rounded-full hover:bg-[#01D0CD]"
+              >Merch</a
             >
           </li>
           <li>
             <a
               href="/your-donations"
-              class="bg-weegee-teal text-white px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
+              class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal text-black font-bold leading-none rounded-full hover:bg-[#01D0CD]"
+              >Donate</a
             >
-              Donate
-            </a>
           </li>
         </ul>
 
@@ -124,7 +247,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
         class="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-weegee-black/10 z-50 shadow-lg overflow-hidden transition-[max-height] duration-300 ease-in-out"
         style="max-height: 0"
       >
-        <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-sans">
+        <ul class="flex flex-col px-6 py-4 gap-4 text-[20px] font-sans">
           <li>
             <a
               href="/"
@@ -161,11 +284,23 @@ const { title, pageBackground = "bg-white" } = Astro.props;
             >
           </li>
           <li>
-            <a
-              href="/shop"
-              class="block py-2 hover:text-weegee-teal transition-colors"
-              >Shop</a
-            >
+            <span class="block py-2 font-bold text-weegee-black/70">Shop</span>
+            <ul class="pl-4 flex flex-col gap-2 pb-2">
+              <li>
+                <a
+                  href="/merch"
+                  class="block py-1 hover:text-weegee-teal transition-colors"
+                  >Merch</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/shop"
+                  class="block py-1 hover:text-weegee-teal transition-colors"
+                  >Shop In-Kind</a
+                >
+              </li>
+            </ul>
           </li>
           <li>
             <a
@@ -177,10 +312,25 @@ const { title, pageBackground = "bg-white" } = Astro.props;
           <li
             class="border-t border-weegee-black/10 pt-4 mt-2 flex flex-col gap-4"
           >
-            <a
-              href="/about"
-              class="block hover:text-weegee-teal transition-colors">About</a
-            >
+            <div>
+              <span class="block font-bold text-weegee-black/70">About us</span>
+              <ul class="pl-4 flex flex-col gap-2 pt-2">
+                <li>
+                  <a
+                    href="/about"
+                    class="block hover:text-weegee-teal transition-colors"
+                    >Meet the team</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/faqs"
+                    class="block hover:text-weegee-teal transition-colors"
+                    >FAQs</a
+                  >
+                </li>
+              </ul>
+            </div>
             <a
               href="/contact"
               class="block hover:text-weegee-teal transition-colors">Contact</a
@@ -194,142 +344,143 @@ const { title, pageBackground = "bg-white" } = Astro.props;
           </li>
         </ul>
       </div>
-    </header>
 
-    <main class=`${pageBackground} min-h-screen pb-10 md:pb-24 font-sans`>
-      <slot name="banner" />
-      <div class="max-w-7xl mx-auto px-2 md:px-6">
-        <slot />
-      </div>
-    </main>
+      <main class=`${pageBackground} min-h-screen pb-10 md:pb-24 font-sans`>
+        <slot name="banner" />
+        <div class="max-w-7xl mx-auto px-2 md:px-6">
+          <slot />
+        </div>
+      </main>
 
-    <footer class="border-t border-weegee-black/10 py-8">
-      <div
-        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 mb-20"
-      >
-        <a href="/" class="flex-1 flex justify-center md:justify-start">
-          <img
-            src="/assets/refuweegee.jpg"
-            alt="refuweegee logo"
-            class="h-36 md:h-44 w-auto lg:max-w-[50%]"
-          />
-        </a>
-        <div class="flex-1 flex flex-col items-center">
-          <h3>Follow us on socials</h3>
-          <div class="flex items-center gap-4 mt-2">
-            <a
-              href="https://www.facebook.com/refuweegee"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Refuweegee on Facebook"
-              class="text-weegee-black hover:text-weegee-teal transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-12 h-12"
-                aria-hidden="true"
+      <footer class="border-t border-weegee-black/10 py-8">
+        <div
+          class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 mb-20"
+        >
+          <a href="/" class="flex-1 flex justify-center md:justify-start">
+            <img
+              src="/assets/refuweegee.jpg"
+              alt="refuweegee logo"
+              class="h-36 md:h-44 w-auto lg:max-w-[50%]"
+            />
+          </a>
+          <div class="flex-1 flex flex-col items-center">
+            <h3>Follow us on socials</h3>
+            <div class="flex items-center gap-4 mt-2">
+              <a
+                href="https://www.facebook.com/refuweegee"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Refuweegee on Facebook"
+                class="text-weegee-black hover:text-weegee-teal transition-colors"
               >
-                <path
-                  d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="https://www.instagram.com/refuweegee"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Refuweegee on Instagram"
-              class="text-weegee-black hover:text-weegee-teal transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-12 h-12"
-                aria-hidden="true"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-12 h-12"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/refuweegee"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Refuweegee on Instagram"
+                class="text-weegee-black hover:text-weegee-teal transition-colors"
               >
-                <path
-                  d="M12 2c-2.716 0-3.056.012-4.123.06-1.064.05-1.792.218-2.428.465a4.902 4.902 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.415 1.364-.465 2.428C2.012 8.944 2 9.284 2 12s.012 3.056.06 4.123c.05 1.064.218 1.792.465 2.428a4.902 4.902 0 0 0 1.153 1.772 4.902 4.902 0 0 0 1.772 1.153c.636.247 1.364.415 2.428.465C8.944 21.988 9.284 22 12 22s3.056-.012 4.123-.06c1.064-.05 1.792-.218 2.428-.465a4.902 4.902 0 0 0 1.772-1.153 4.902 4.902 0 0 0 1.153-1.772c.247-.636.415-1.364.465-2.428.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.05-1.064-.218-1.792-.465-2.428a4.902 4.902 0 0 0-1.153-1.772A4.902 4.902 0 0 0 18.551.525c-.636-.247-1.364-.415-2.428-.465C15.056.012 14.716 0 12 0Zm0 2.162c2.67 0 2.986.01 4.04.059.976.045 1.505.207 1.858.344.467.182.8.399 1.15.748.35.35.566.683.748 1.15.137.353.3.882.344 1.857.048 1.055.059 1.37.059 4.041 0 2.67-.01 2.986-.059 4.04-.045.976-.207 1.505-.344 1.858a3.09 3.09 0 0 1-.748 1.15 3.09 3.09 0 0 1-1.15.748c-.353.137-.882.3-1.857.344-1.054.048-1.37.059-4.041.059-2.67 0-2.987-.01-4.04-.059-.976-.045-1.505-.207-1.858-.344a3.09 3.09 0 0 1-1.15-.748 3.09 3.09 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857-.048-1.055-.059-1.37-.059-4.041 0-2.67.01-2.986.059-4.04.045-.976.207-1.505.344-1.858.182-.467.399-.8.748-1.15.35-.35.683-.566 1.15-.748.353-.137.882-.3 1.857-.344 1.055-.048 1.37-.059 4.041-.059Z"
-                ></path>
-                <path
-                  d="M12 15.333a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM18.538 6.462a1.167 1.167 0 1 1-2.333 0 1.167 1.167 0 0 1 2.333 0Z"
-                ></path>
-              </svg>
-            </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-12 h-12"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2c-2.716 0-3.056.012-4.123.06-1.064.05-1.792.218-2.428.465a4.902 4.902 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.415 1.364-.465 2.428C2.012 8.944 2 9.284 2 12s.012 3.056.06 4.123c.05 1.064.218 1.792.465 2.428a4.902 4.902 0 0 0 1.153 1.772 4.902 4.902 0 0 0 1.772 1.153c.636.247 1.364.415 2.428.465C8.944 21.988 9.284 22 12 22s3.056-.012 4.123-.06c1.064-.05 1.792-.218 2.428-.465a4.902 4.902 0 0 0 1.772-1.153 4.902 4.902 0 0 0 1.153-1.772c.247-.636.415-1.364.465-2.428.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.05-1.064-.218-1.792-.465-2.428a4.902 4.902 0 0 0-1.153-1.772A4.902 4.902 0 0 0 18.551.525c-.636-.247-1.364-.415-2.428-.465C15.056.012 14.716 0 12 0Zm0 2.162c2.67 0 2.986.01 4.04.059.976.045 1.505.207 1.858.344.467.182.8.399 1.15.748.35.35.566.683.748 1.15.137.353.3.882.344 1.857.048 1.055.059 1.37.059 4.041 0 2.67-.01 2.986-.059 4.04-.045.976-.207 1.505-.344 1.858a3.09 3.09 0 0 1-.748 1.15 3.09 3.09 0 0 1-1.15.748c-.353.137-.882.3-1.857.344-1.054.048-1.37.059-4.041.059-2.67 0-2.987-.01-4.04-.059-.976-.045-1.505-.207-1.858-.344a3.09 3.09 0 0 1-1.15-.748 3.09 3.09 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857-.048-1.055-.059-1.37-.059-4.041 0-2.67.01-2.986.059-4.04.045-.976.207-1.505.344-1.858.182-.467.399-.8.748-1.15.35-.35.683-.566 1.15-.748.353-.137.882-.3 1.857-.344 1.055-.048 1.37-.059 4.041-.059Z"
+                  ></path>
+                  <path
+                    d="M12 15.333a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM18.538 6.462a1.167 1.167 0 1 1-2.333 0 1.167 1.167 0 0 1 2.333 0Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col items-center">
+            <p class="text-xs mb-0">
+              website by <span class="sr-only">static orbit</span>
+            </p>
+            <img
+              src="/assets/static_orbit_full.webp"
+              alt="static orbit logo"
+              class="h-6 md:h-12 w-auto max-w-40"
+            />
           </div>
         </div>
-        <div class="flex-1 flex flex-col items-center">
-          <p class="text-xs mb-0">
-            website by <span class="sr-only">static orbit</span>
-          </p>
+      </footer>
+
+      <!-- Sticky action bar -->
+      <div
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 w-11/12 max-w-lg bg-weegee-teal text-black rounded-full py-2 px-8 shadow-2xl flex justify-between items-center z-50 border-2 border-white/20 backdrop-blur-sm"
+      >
+        <a
+          href="/your-donations"
+          class="flex flex-col items-center gap-1 group"
+        >
           <img
-            src="/assets/static_orbit_full.webp"
-            alt="static orbit logo"
-            class="h-6 md:h-12 w-auto max-w-40"
+            src="/assets/svgs/donate.svg"
+            alt=""
+            class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
           />
-        </div>
+          <span class="text-[10px] uppercase tracking-widest font-bold"
+            >Donate</span
+          >
+        </a>
+        <a href="/copy-of-about" class="flex flex-col items-center gap-1 group">
+          <img
+            src="/assets/svgs/volunteer.svg"
+            alt=""
+            class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
+          />
+          <span class="text-[10px] uppercase tracking-widest font-bold"
+            >Volunteer</span
+          >
+        </a>
+        <a href="/merch" class="flex flex-col items-center gap-1 group">
+          <span
+            class="w-9 h-9 bg-weegee-yellow [mask-image:url(/assets/svgs/merch.svg)] [mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] group-hover:-translate-y-1 transition-transform"
+            aria-hidden="true"></span>
+          <span class="text-[10px] uppercase tracking-widest font-bold"
+            >Merch</span
+          >
+        </a>
       </div>
-    </footer>
 
-    <!-- Sticky action bar -->
-    <div
-      class="fixed bottom-6 left-1/2 -translate-x-1/2 w-11/12 max-w-lg bg-weegee-teal text-black rounded-full py-2 px-8 shadow-2xl flex justify-between items-center z-50 border-2 border-white/20 backdrop-blur-sm"
-    >
-      <a href="/your-donations" class="flex flex-col items-center gap-1 group">
-        <img
-          src="/assets/svgs/donate.svg"
-          alt=""
-          class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
-        />
-        <span class="text-[10px] uppercase tracking-widest font-bold"
-          >Donate</span
-        >
-      </a>
-      <a href="/copy-of-about" class="flex flex-col items-center gap-1 group">
-        <img
-          src="/assets/svgs/volunteer.svg"
-          alt=""
-          class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
-        />
-        <span class="text-[10px] uppercase tracking-widest font-bold"
-          >Volunteer</span
-        >
-      </a>
-      <a href="/copy-of-about" class="flex flex-col items-center gap-1 group">
-        <img
-          src="/assets/svgs/partners.svg"
-          alt=""
-          class="w-9 h-9 group-hover:-translate-y-1 transition-transform"
-        />
-        <span class="text-[10px] uppercase tracking-widest font-bold"
-          >Partners</span
-        >
-      </a>
-    </div>
+      <script>
+        const toggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        const bar1 = document.getElementById("bar-1");
+        const bar2 = document.getElementById("bar-2");
+        const bar3 = document.getElementById("bar-3");
 
-    <script>
-      const toggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("mobile-menu");
-      const bar1 = document.getElementById("bar-1");
-      const bar2 = document.getElementById("bar-2");
-      const bar3 = document.getElementById("bar-3");
+        toggle?.addEventListener("click", () => {
+          const isOpen = toggle.getAttribute("aria-expanded") === "false";
+          toggle.setAttribute("aria-expanded", String(isOpen));
 
-      toggle?.addEventListener("click", () => {
-        const isOpen = toggle.getAttribute("aria-expanded") === "false";
-        toggle.setAttribute("aria-expanded", String(isOpen));
+          if (menu) {
+            menu.style.maxHeight = isOpen ? menu.scrollHeight + "px" : "0";
+          }
 
-        if (menu) {
-          menu.style.maxHeight = isOpen ? menu.scrollHeight + "px" : "0";
-        }
-
-        bar1?.classList.toggle("rotate-45", isOpen);
-        bar1?.classList.toggle("translate-y-2", isOpen);
-        bar2?.classList.toggle("opacity-0", isOpen);
-        bar3?.classList.toggle("-rotate-45", isOpen);
-        bar3?.classList.toggle("-translate-y-2", isOpen);
-      });
-    </script>
+          bar1?.classList.toggle("rotate-45", isOpen);
+          bar1?.classList.toggle("translate-y-2", isOpen);
+          bar2?.classList.toggle("opacity-0", isOpen);
+          bar3?.classList.toggle("-rotate-45", isOpen);
+          bar3?.classList.toggle("-translate-y-2", isOpen);
+        });
+      </script>
+    </header>
   </body>
 </html>

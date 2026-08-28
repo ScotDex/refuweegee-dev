@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — style guide: black, white, teal */
+  /* Brand palette — style guide: black, white, teal , teal-dark*/
   --color-weegee-black: #000000;
   --color-weegee-white: #ffffff;
-  --color-weegee-teal: #01b1af;
+  --color-weegee-teal: #04b1af;
+  --color-weegee-teal-dark: #028885;
   --color-weegee-yellow: #fbdf64;
 
   --font-sans: "Avenir", ui-sans-serif, system-ui, sans-serif;
@@ -76,7 +77,7 @@
 
   body,
   p {
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 18px;
   }
 }

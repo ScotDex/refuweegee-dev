@@ -76,7 +76,7 @@ const sidebarContent = {
               if (block.type === "story-large") {
                 return (
                   <div
-                    class={`${block.colSpan} bg-weegee-black rounded-3xl overflow-hidden relative group border border-weegee-black/5`}
+                    class={`${block.colSpan} bg-weegee-black rounded-xl overflow-hidden relative group border border-weegee-black/5`}
                   >
                     <div class="absolute inset-0 bg-gradient-to-t from-weegee-black/90 via-weegee-black/40 to-transparent z-10" />
                     <div
@@ -107,7 +107,7 @@ const sidebarContent = {
               if (block.type === "feature-teal") {
                 return (
                   <div
-                    class={`${block.colSpan} bg-weegee-teal rounded-3xl p-8 flex flex-col justify-between text-weegee-white hover:shadow-xl transition-shadow duration-300`}
+                    class={`${block.colSpan} bg-weegee-teal rounded-xl p-8 flex flex-col justify-between text-weegee-white hover:shadow-xl transition-shadow duration-300`}
                   >
                     <div>
                       <h1 class="text-2xl mb-2 text-weegee-white">
@@ -130,7 +130,7 @@ const sidebarContent = {
               if (block.type === "stat-yellow") {
                 return (
                   <div
-                    class={`${block.colSpan} bg-weegee-yellow rounded-3xl p-8 flex flex-col justify-center text-weegee-black hover:shadow-xl transition-shadow duration-300`}
+                    class={`${block.colSpan} bg-weegee-yellow rounded-xl p-8 flex flex-col justify-center text-weegee-black hover:shadow-xl transition-shadow duration-300`}
                   >
                     <h1 class="text-5xl mb-1">{block.title}</h1>
                     <p class="text-sm font-medium opacity-80">
@@ -143,7 +143,7 @@ const sidebarContent = {
               if (block.type === "image-standard") {
                 return (
                   <div
-                    class={`${block.colSpan} bg-weegee-white rounded-3xl overflow-hidden relative border border-weegee-black/5 group`}
+                    class={`${block.colSpan} bg-weegee-white rounded-xl overflow-hidden relative border border-weegee-black/5 group`}
                   >
                     <div
                       class="absolute inset-0 bg-cover bg-center group-hover:scale-102 transition-transform duration-300"
@@ -160,7 +160,7 @@ const sidebarContent = {
       <!-- RIGHT CONTAINER: SIDEBAR CONTAINER -->
       <div class="lg:col-span-1">
         <div
-          class="bg-weegee-white p-8 rounded-3xl border border-weegee-black/10 sticky top-6 flex flex-col justify-between min-h-[450px] shadow-sm"
+          class="bg-weegee-white p-8 rounded-xl border border-weegee-black/10 sticky top-6 flex flex-col justify-between min-h-[450px] shadow-sm"
         >
           <div>
             <!-- Custom heading rule inherits h2 font specs dynamically -->

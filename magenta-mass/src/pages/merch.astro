@@ -5,7 +5,7 @@ import { products, formatPence } from "../data/products";
 ---
 
 <Layout title="Shop | Refuweegee">
-  <PageBanner slot="banner" title="Refuweegee merch" background="bg-weegee-teal text-weegee-white" showBasket />
+  <PageBanner slot="banner" title="Refuweegee merch" showBasket />
 
   <main class="max-w-7xl mx-auto px-6 py-16">
     <div
@@ -20,10 +20,9 @@ import { products, formatPence } from "../data/products";
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
       {products.map((product) => (
-        <div class="md:col-span-4 group bg-weegee-white border-2 border-weegee-black rounded-3xl p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+        <div class="md:col-span-4 group bg-weegee-white border-2 border-weegee-black rounded-xl p-4 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
 
           <div>
-            <!-- Image Box with a fixed aspect ratio so all product windows line up perfectly -->
             <div class="bg-weegee-cream rounded-xl aspect-square mb-4 overflow-hidden border border-weegee-black/5 relative">
               <img
                 src={product.image}
@@ -59,7 +58,7 @@ import { products, formatPence } from "../data/products";
     </div>
 
     <!-- Basket -->
-    <section id="basket" class="mt-16 bg-weegee-white border-2 border-weegee-black rounded-3xl p-6">
+    <section id="basket" class="mt-16 bg-weegee-white border-2 border-weegee-black rounded-xl p-6">
       <h2 class="text-2xl font-bold font-serif mb-4">Your Basket</h2>
 
       <div id="basket-empty" class="text-sm text-weegee-black/60">Your basket is empty.</div>
@@ -111,6 +110,7 @@ import { products, formatPence } from "../data/products";
     const count = getCartCount();
     countEl.textContent = String(count);
     countEl.classList.toggle("hidden", count === 0);
+    countEl.classList.toggle("flex", count !== 0);
   }
 
   function renderBasket() {
