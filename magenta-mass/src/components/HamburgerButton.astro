@@ -1,0 +1,77 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "lg:hidden p-2 -mr-2" } = Astro.props;
+---
+
+<button
+  id="menu-toggle"
+  class={className}
+  aria-label="Toggle menu"
+  aria-expanded="false"
+  aria-controls="mobile-menu"
+>
+  <svg id="ham-icon" class="ham hamRotate w-9 h-9" viewBox="0 0 100 100">
+    <path
+      class="line top"
+      d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+    ></path>
+    <path class="line middle" d="m 30,50 h 40"></path>
+    <path
+      class="line bottom"
+      d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+    ></path>
+  </svg>
+</button>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const hamIcon = document.getElementById("ham-icon");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "false";
+    toggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (menu) {
+      menu.style.maxHeight = isOpen ? menu.scrollHeight + "px" : "0";
+    }
+
+    hamIcon?.classList.toggle("active", isOpen);
+  });
+</script>
+
+<style>
+  .ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    user-select: none;
+  }
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+  .line {
+    fill: none;
+    transition:
+      stroke-dasharray 400ms,
+      stroke-dashoffset 400ms;
+    stroke: var(--color-weegee-black);
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+  .ham .top {
+    stroke-dasharray: 40 139;
+  }
+  .ham .bottom {
+    stroke-dasharray: 40 180;
+  }
+  .ham.active .top {
+    stroke-dashoffset: -98px;
+  }
+  .ham.active .bottom {
+    stroke-dashoffset: -138px;
+  }
+</style>

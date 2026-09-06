@@ -15,13 +15,13 @@ const hasBox = Astro.slots.has("box");
     {
       hasBox ? (
         <div class="bg-weegee-white rounded-xl px-6 py-3 max-w-prose flex flex-col gap-2">
-          <h1>{title}</h1>
+          <h1 class="whitespace-nowrap">{title}</h1>
           <div class="font-normal">
             <slot name="box" />
           </div>
         </div>
       ) : (
-        <h1>{title}</h1>
+        <h1 class="whitespace-nowrap">{title}</h1>
       )
     }
 

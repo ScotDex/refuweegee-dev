@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import DropdownIcon from "./DropdownIcon.astro";
+import HamburgerButton from "./HamburgerButton.astro";
 import { navDropdowns, navLinks } from "../data/navigation";
 
 interface Props {
@@ -31,63 +32,83 @@ const { title, pageBackground = "bg-white" } = Astro.props;
     <header class="border-b border-weegee-black/10 relative">
       <!-- Utility bar -->
       <div
-        class="hidden md:flex justify-end items-center gap-4 max-w-7xl mx-auto px-6 pt-4 text-[20px]"
+        class="hidden md:flex justify-between items-center gap-4 max-w-7xl mx-auto px-6 pt-4 text-[18px]"
       >
-        <div class="w-24 flex justify-center">
-          <a
-            href="/contact"
-            class="font-bold hover:text-[#019391] transition-colors">Contact</a
-          >
-        </div>
-        <div class="w-24 flex items-center justify-center gap-3">
-          <a
-            href="https://www.facebook.com/refuweegee"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Refuweegee on Facebook"
-            class="text-weegee-black hover:text-weegee-teal transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-8 h-8"
-              aria-hidden="true"
+        <a href="/">
+          <img
+            src="/assets/logo-secondary.webp"
+            alt="Refuweegee"
+            class="h-10 w-auto"
+          />
+        </a>
+        <div class="flex items-center gap-4">
+          <div class="hidden lg:flex xl:hidden items-center gap-4">
+            <a
+              href="/merch"
+              class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal text-black font-bold leading-none rounded-full hover:bg-[#01D0CD]"
+              >Merch</a
             >
-              <path
-                d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"
-              ></path>
-            </svg>
-          </a>
-          <a
-            href="https://www.instagram.com/refuweegee"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Refuweegee on Instagram"
-            class="text-weegee-black hover:text-weegee-teal transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-8 h-8"
-              aria-hidden="true"
+            <a
+              href="/your-donations"
+              class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal text-black font-bold leading-none rounded-full hover:bg-[#01D0CD]"
+              >Donate</a
             >
-              <path
-                d="M12 2c-2.716 0-3.056.012-4.123.06-1.064.05-1.792.218-2.428.465a4.902 4.902 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.415 1.364-.465 2.428C2.012 8.944 2 9.284 2 12s.012 3.056.06 4.123c.05 1.064.218 1.792.465 2.428a4.902 4.902 0 0 0 1.153 1.772 4.902 4.902 0 0 0 1.772 1.153c.636.247 1.364.415 2.428.465C8.944 21.988 9.284 22 12 22s3.056-.012 4.123-.06c1.064-.05 1.792-.218 2.428-.465a4.902 4.902 0 0 0 1.772-1.153 4.902 4.902 0 0 0 1.153-1.772c.247-.636.415-1.364.465-2.428.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.05-1.064-.218-1.792-.465-2.428a4.902 4.902 0 0 0-1.153-1.772A4.902 4.902 0 0 0 18.551.525c-.636-.247-1.364-.415-2.428-.465C15.056.012 14.716 0 12 0Zm0 2.162c2.67 0 2.986.01 4.04.059.976.045 1.505.207 1.858.344.467.182.8.399 1.15.748.35.35.566.683.748 1.15.137.353.3.882.344 1.857.048 1.055.059 1.37.059 4.041 0 2.67-.01 2.986-.059 4.04-.045.976-.207 1.505-.344 1.858a3.09 3.09 0 0 1-.748 1.15 3.09 3.09 0 0 1-1.15.748c-.353.137-.882.3-1.857.344-1.054.048-1.37.059-4.041.059-2.67 0-2.987-.01-4.04-.059-.976-.045-1.505-.207-1.858-.344a3.09 3.09 0 0 1-1.15-.748 3.09 3.09 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857-.048-1.055-.059-1.37-.059-4.041 0-2.67.01-2.986.059-4.04.045-.976.207-1.505.344-1.858.182-.467.399-.8.748-1.15.35-.35.683-.566 1.15-.748.353-.137.882-.3 1.857-.344 1.055-.048 1.37-.059 4.041-.059Z"
-              ></path>
-              <path
-                d="M12 15.333a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM18.538 6.462a1.167 1.167 0 1 1-2.333 0 1.167 1.167 0 0 1 2.333 0Z"
-              ></path>
-            </svg>
-          </a>
+          </div>
+          <div class="w-24 flex justify-center">
+            <a
+              href="/contact"
+              class="font-bold hover:text-[#019391] transition-colors"
+              >Contact</a
+            >
+          </div>
+          <div class="w-24 flex items-center justify-center gap-3">
+            <a
+              href="https://www.facebook.com/refuweegee"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Refuweegee on Facebook"
+              class="text-weegee-black hover:text-weegee-teal transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-8 h-8"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.459h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/refuweegee"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Refuweegee on Instagram"
+              class="text-weegee-black hover:text-weegee-teal transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-8 h-8"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2c-2.716 0-3.056.012-4.123.06-1.064.05-1.792.218-2.428.465a4.902 4.902 0 0 0-1.772 1.153A4.902 4.902 0 0 0 2.525 5.45c-.247.636-.415 1.364-.465 2.428C2.012 8.944 2 9.284 2 12s.012 3.056.06 4.123c.05 1.064.218 1.792.465 2.428a4.902 4.902 0 0 0 1.153 1.772 4.902 4.902 0 0 0 1.772 1.153c.636.247 1.364.415 2.428.465C8.944 21.988 9.284 22 12 22s3.056-.012 4.123-.06c1.064-.05 1.792-.218 2.428-.465a4.902 4.902 0 0 0 1.772-1.153 4.902 4.902 0 0 0 1.153-1.772c.247-.636.415-1.364.465-2.428.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.05-1.064-.218-1.792-.465-2.428a4.902 4.902 0 0 0-1.153-1.772A4.902 4.902 0 0 0 18.551.525c-.636-.247-1.364-.415-2.428-.465C15.056.012 14.716 0 12 0Zm0 2.162c2.67 0 2.986.01 4.04.059.976.045 1.505.207 1.858.344.467.182.8.399 1.15.748.35.35.566.683.748 1.15.137.353.3.882.344 1.857.048 1.055.059 1.37.059 4.041 0 2.67-.01 2.986-.059 4.04-.045.976-.207 1.505-.344 1.858a3.09 3.09 0 0 1-.748 1.15 3.09 3.09 0 0 1-1.15.748c-.353.137-.882.3-1.857.344-1.054.048-1.37.059-4.041.059-2.67 0-2.987-.01-4.04-.059-.976-.045-1.505-.207-1.858-.344a3.09 3.09 0 0 1-1.15-.748 3.09 3.09 0 0 1-.748-1.15c-.137-.353-.3-.882-.344-1.857-.048-1.055-.059-1.37-.059-4.041 0-2.67.01-2.986.059-4.04.045-.976.207-1.505.344-1.858.182-.467.399-.8.748-1.15.35-.35.683-.566 1.15-.748.353-.137.882-.3 1.857-.344 1.055-.048 1.37-.059 4.041-.059Z"
+                ></path>
+                <path
+                  d="M12 15.333a3.333 3.333 0 1 1 0-6.666 3.333 3.333 0 0 1 0 6.666ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM18.538 6.462a1.167 1.167 0 1 1-2.333 0 1.167 1.167 0 0 1 2.333 0Z"
+                ></path>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
-      <nav
-        class="max-w-7xl mx-auto px-6 pb-8 pt-2 flex items-center justify-between"
-      >
-        <a href="/">
+      <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center">
+        <a href="/" class="md:hidden">
           <img
             src="/assets/logo-secondary.webp"
             alt="Refuweegee"
@@ -96,79 +117,66 @@ const { title, pageBackground = "bg-white" } = Astro.props;
         </a>
 
         <!-- Desktop nav -->
-        <ul class="hidden lg:flex items-center gap-6 text-md font-sans">
-          {
-            navDropdowns.map((dropdown) => (
-              <li class="relative group">
-                <button class="flex items-center gap-1 py-2 font-bold hover:text-[#019391] transition-colors">
-                  {dropdown.label}
-                  <DropdownIcon />
-                </button>
-                <ul class="absolute left-0 top-full w-max bg-white border border-weegee-black/10 rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
-                  {dropdown.items.map((item) => (
-                    <li>
-                      <a
-                        href={item.href}
-                        class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))
-          }
+        <div class="hidden lg:flex flex-1">
+          <ul class="flex items-center gap-10 text-md font-sans">
+            {
+              navDropdowns.map((dropdown) => (
+                <li class="relative group">
+                  <button class="flex items-center gap-1 py-2 font-bold hover:text-[#019391] transition-colors">
+                    {dropdown.label}
+                    <DropdownIcon />
+                  </button>
+                  <ul class="absolute left-0 top-full w-max bg-white border border-weegee-black/10 rounded-xl shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+                    {dropdown.items.map((item) => (
+                      <li>
+                        <a
+                          href={item.href}
+                          class="block px-4 py-2 whitespace-nowrap hover:text-[#019391] hover:bg-weegee-black/5 transition-colors"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))
+            }
 
-          {
-            navLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="block py-2 font-bold hover:text-[#019391] transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+            {
+              navLinks.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="block py-2 font-bold hover:text-[#019391] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
 
-        <ul class="hidden md:flex items-center gap-4 text-4">
-          <li>
-            <a
-              href="/merch"
-              class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal text-black font-bold leading-none rounded-full hover:bg-[#01D0CD]"
-              >Merch</a
-            >
-          </li>
-          <li>
-            <a
-              href="/your-donations"
-              class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal text-black font-bold leading-none rounded-full hover:bg-[#01D0CD]"
-              >Donate</a
-            >
-          </li>
-        </ul>
+        <div class="flex items-center gap-4 ml-auto">
+          <ul class="hidden md:flex lg:hidden xl:flex items-center gap-4 text-4">
+            <li>
+              <a
+                href="/merch"
+                class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal font-bold leading-none rounded-full hover:bg-[#01D0CD]"
+                >Merch</a
+              >
+            </li>
+            <li>
+              <a
+                href="/your-donations"
+                class="inline-flex items-center justify-center w-24 h-9 bg-weegee-teal font-bold leading-none rounded-full hover:bg-[#01D0CD]"
+                >Donate</a
+              >
+            </li>
+          </ul>
 
-        <!-- Hamburger button -->
-        <button
-          id="menu-toggle"
-          class="lg:hidden flex flex-col gap-1.5 p-2 -mr-2"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span
-            class="block w-6 h-0.5 bg-weegee-black transition-all duration-300"
-            id="bar-1"></span>
-          <span
-            class="block w-6 h-0.5 bg-weegee-black transition-all duration-300"
-            id="bar-2"></span>
-          <span
-            class="block w-6 h-0.5 bg-weegee-black transition-all duration-300"
-            id="bar-3"></span>
-        </button>
+          <HamburgerButton />
+        </div>
       </nav>
 
       <!-- Mobile menu -->
@@ -222,7 +230,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
           }
 
           <li
-            class="border-t border-weegee-black/10 pt-4 mt-2 flex flex-col gap-4"
+            class="md:hidden border-t border-weegee-black/10 pt-4 mt-2 flex flex-col gap-4"
           >
             <a
               href="/contact"
@@ -245,7 +253,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
       </div>
     </header>
 
-    <main class=`${pageBackground} min-h-screen pb-10 md:pb-24 font-sans`>
+    <main class=`${pageBackground} lg:min-h-screen pb-10 md:pb-24 font-sans`>
       <slot name="banner" />
       <div class="max-w-7xl mx-auto px-2 md:px-6">
         <slot />
@@ -256,10 +264,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
       <div
         class="max-w-7xl mx-auto px-6 grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 items-center gap-6 mb-20"
       >
-        <a
-          href="/"
-          class="col-span-4 md:col-span-8 lg:col-span-4 flex justify-center md:justify-start"
-        >
+        <a href="/" class="hidden lg:flex lg:col-span-4 lg:justify-start">
           <img
             src="/assets/refuweegee.jpg"
             alt="refuweegee logo"
@@ -267,7 +272,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
           />
         </a>
         <div
-          class="col-span-4 md:col-span-8 lg:col-span-4 flex flex-col items-center"
+          class="col-span-4 md:col-span-4 lg:col-span-4 flex flex-col items-center md:items-start lg:items-center md:self-start lg:self-auto md:order-2 lg:order-none"
         >
           <h3>Follow us on socials</h3>
           <div class="flex items-center gap-4 mt-2">
@@ -314,7 +319,9 @@ const { title, pageBackground = "bg-white" } = Astro.props;
             </a>
           </div>
         </div>
-        <div class="col-span-4 md:col-span-8 lg:col-span-4">
+        <div
+          class="col-span-4 md:col-span-4 lg:col-span-4 md:order-2 lg:order-none"
+        >
           <div
             class="mt-4 md:mt-0 flex flex-col items-center md:items-end text-sm md:text-right"
           >
@@ -372,28 +379,5 @@ const { title, pageBackground = "bg-white" } = Astro.props;
         >
       </a>
     </div>
-
-    <script>
-      const toggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("mobile-menu");
-      const bar1 = document.getElementById("bar-1");
-      const bar2 = document.getElementById("bar-2");
-      const bar3 = document.getElementById("bar-3");
-
-      toggle?.addEventListener("click", () => {
-        const isOpen = toggle.getAttribute("aria-expanded") === "false";
-        toggle.setAttribute("aria-expanded", String(isOpen));
-
-        if (menu) {
-          menu.style.maxHeight = isOpen ? menu.scrollHeight + "px" : "0";
-        }
-
-        bar1?.classList.toggle("rotate-45", isOpen);
-        bar1?.classList.toggle("translate-y-2", isOpen);
-        bar2?.classList.toggle("opacity-0", isOpen);
-        bar3?.classList.toggle("-rotate-45", isOpen);
-        bar3?.classList.toggle("-translate-y-2", isOpen);
-      });
-    </script>
   </body>
 </html>

@@ -47,20 +47,32 @@
   h1 {
     font-family: "Libre Baskerville", Georgia, serif;
     font-weight: 700;
-    font-size: 3rem; /* 54px */
+    font-size: clamp(
+      1.2rem,
+      1.2rem + 2.2vw,
+      3rem
+    ); /* ~34px mobile -> 54px desktop */
     letter-spacing: -0.02em;
   }
 
   h2 {
     font-family: "Libre Baskerville", Georgia, serif;
     font-weight: 900;
-    font-size: 2rem; /* 36px */
+    font-size: clamp(
+      1rem,
+      1rem + 1.6vw,
+      2rem
+    ); /* ~25px mobile -> 36px desktop */
     letter-spacing: 0.02em;
   }
 
   h3 {
     font-weight: 900;
-    font-size: 1.5rem; /* 27px */
+    font-size: clamp(
+      1.125rem,
+      0.9rem + 1vw,
+      1.5rem
+    ); /* ~20px mobile -> 27px desktop */
     letter-spacing: 0.02em;
   }
 

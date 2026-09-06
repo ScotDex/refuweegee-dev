@@ -27,12 +27,16 @@ const { items, id = "accordion" } = Astro.props;
           class="accordion-item py-2"
           class:list={
             item.withBackground
-              ? "rounded-xl bg-weegee-teal p-[12px] mb-8"
+              ? "rounded-xl bg-weegee-teal p-[12px] mb-8 last:mb-0"
               : undefined
           }
         >
           <HeadingTag
-            class:list={item.withBackground ? "text-2xl" : "text-xl "}
+            class:list={
+              item.withBackground
+                ? "text-xl md:text-2xl"
+                : "text-lg md:text-xl "
+            }
           >
             <button
               id={titleId}

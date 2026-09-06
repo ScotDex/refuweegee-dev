@@ -6,14 +6,11 @@ import { faqCategories } from "../data/faqs";
 ---
 
 <Layout title="Get in touch">
-  <PageBanner
-    slot="banner"
-    title="Frequently asked questions"
-  />
+  <PageBanner slot="banner" title="Frequently asked questions" />
 
   <div class="relative">
     <main class="relative flex flex-col justify-center overflow-hidden">
-      <div class="w-full max-w-[100ch] py-24">
+      <div class="w-full max-w-[100ch] pt-8 lg:py-24">
         <Accordion items={faqCategories} id="faqs" />
       </div>
     </main>
