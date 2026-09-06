@@ -5,22 +5,19 @@ import Button from "../components/Button.astro";
 ---
 
 <Layout title="Fundraise for us!">
-  <PageBanner slot="banner" title="Fundraise for us!" />
-
-  <div class="pt-8 xl:pt-10 flex flex-col gap-6">
-    <!-- Intro -->
-    <div
-      class="bg-weegee-white p-4 rounded-xl md:p-8 border-2 border-weegee-teal flex flex-col gap-3"
-    >
-      <h2>You've always been amazing...</h2>
+  <PageBanner slot="banner" title="Fundraise for us!">
+    <span slot="box">
+      <p class="text-xl font-semibold">You've always been amazing...</p>
       <p class="leading-relaxed">
         Refuweegee has survived since beginning as a voluntary project in 2015
         because of the exceptional generosity of our wonderful supporters. Each
         year we need to raise around £750,000 and we rely on brilliant people to
         contribute however they can.
       </p>
-    </div>
+    </span>
+  </PageBanner>
 
+  <div class="pt-8 xl:pt-10 flex flex-col gap-6">
     <!-- image section -->
     <div class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
       <div class="hidden xl:block xl:col-span-4">

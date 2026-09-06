@@ -158,7 +158,9 @@ const { title, pageBackground = "bg-white" } = Astro.props;
         </div>
 
         <div class="flex items-center gap-4 ml-auto">
-          <ul class="hidden md:flex lg:hidden xl:flex items-center gap-4 text-4">
+          <ul
+            class="hidden md:flex lg:hidden xl:flex items-center gap-4 text-4"
+          >
             <li>
               <a
                 href="/merch"
@@ -253,7 +255,7 @@ const { title, pageBackground = "bg-white" } = Astro.props;
       </div>
     </header>
 
-    <main class=`${pageBackground} lg:min-h-screen pb-10 md:pb-24 font-sans`>
+    <main class=`${pageBackground} pb-10 md:pb-12 font-sans`>
       <slot name="banner" />
       <div class="max-w-7xl mx-auto px-2 md:px-6">
         <slot />
