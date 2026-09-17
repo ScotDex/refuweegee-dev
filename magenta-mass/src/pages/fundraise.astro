@@ -20,19 +20,21 @@ import Button from "../components/Button.astro";
   <div class="pt-8 xl:pt-10 flex flex-col gap-6">
     <!-- image section -->
     <div class="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6">
-      <div class="hidden xl:block xl:col-span-4">
+      <div
+        class="hidden xl:block xl:col-span-4 relative h-full overflow-hidden rounded-xl"
+      >
         <img
-          src="/assets/donations.webp"
-          alt="Gift Aid UK Logo"
-          class="w-full rounded-xl border-2 border-weegee-teal"
+          src="/assets/fundraising/euan_thomson.webp"
+          alt="Euan Thomson and friends Tiree"
+          class="absolute inset-0 w-full h-full object-cover rounded-xl border-2 border-weegee-teal"
         />
       </div>
 
       <div
-        class="md:col-span-4 lg:col-span-6 xl:col-span-4 bg-weegee-white rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2 lg:gap-6"
+        class="md:col-span-4 lg:col-span-6 xl:col-span-4 bg-weegee-white rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2 lg:gap-6 h-fit"
       >
         <h3
-          class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+          class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10 h-fit"
         >
           From your sofa or from Ben Nevis…
         </h3>
@@ -46,11 +48,13 @@ import Button from "../components/Button.astro";
           </p>
         </div>
       </div>
-      <div class="md:col-span-4 lg:col-span-6 xl:col-span-4">
+      <div
+        class="md:col-span-4 lg:col-span-6 xl:col-span-4 relative h-full overflow-hidden rounded-xl"
+      >
         <img
-          src="/assets/donations.webp"
-          alt="Gift Aid UK Logo"
-          class="w-full rounded-xl border-2 border-weegee-teal"
+          src="/assets/fundraising/ewan_mcnally.webp"
+          alt="Runner marathon Ewan McNally"
+          class="absolute inset-0 w-full h-full object-cover object-top rounded-xl border-2 border-weegee-teal"
         />
       </div>
     </div>
@@ -139,6 +143,92 @@ import Button from "../components/Button.astro";
             color="black"
           />
         </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-weegee-white rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2 lg:gap-6"
+    >
+      <h3 class="text-2xl text-weegee-teal border-b pb-2 border-weegee-teal/10">
+        Having fun while raising funds
+      </h3>
+      <p>
+        We like knowing people are having fun while fundraising for us so
+        whatever floats your boat, enjoy yourself and know you are making life
+        better for people. You can raise funds on your own, with friends,
+        family, at work, online or at a club.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div
+        class="bg-weegee-teal rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2"
+      >
+        <h4 class="text-xl font-semibold text-weegee-black">
+          For the book lovers . . .
+        </h4>
+        <p>
+          Have a charity book sale or a book swap and raise funds for the people
+          in need.
+        </p>
+      </div>
+      <div class="relative h-full overflow-hidden rounded-xl">
+        <img
+          src="/assets/fundraising/y'morzin_cup_final_2026.webp"
+          alt="Y'morzin Cup Final 2026 (in memory of Jonathan Morrin)"
+          class="absolute inset-0 w-full h-full object-cover rounded-xl border-2 border-weegee-teal"
+        />
+      </div>
+      <div
+        class="bg-weegee-teal rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2"
+      >
+        <h4 class="text-xl font-semibold text-weegee-black">
+          For the fashion lovers . . .
+        </h4>
+        <p>
+          Have a clothes swap at work, charge an amount per item and donate
+          leftovers to our free shop.
+        </p>
+      </div>
+
+      <div
+        class="rounded-xl p-4 md:px-6 lg:p-8 border-2 bg-weegee-teal border-weegee-teal flex flex-col gap-2"
+      >
+        <h4 class="text-xl font-semibold text-weegee-black">
+          For the quizzers . . .
+        </h4>
+        <p>
+          Organise a quiz for your lunch break at work, host a night with
+          friends, in the pub or go all 2020 and have a video call. Charge for
+          entry and host a raffle on the night to raise funds.
+        </p>
+      </div>
+
+      <div
+        class="bg-weegee-teal rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2"
+      >
+        <h4 class="text-xl font-semibold text-weegee-black">
+          For the bakers . . .
+        </h4>
+        <p>
+          Who can resist a freshly baked cake, muffin or biscuits? Hold a
+          fundraising bake sale and enjoy the treats knowing you are helping
+          others.
+        </p>
+      </div>
+
+      <div
+        class="bg-weegee-teal rounded-xl p-4 md:px-6 lg:p-8 border-2 border-weegee-teal flex flex-col gap-2"
+      >
+        <h4 class="text-xl font-semibold text-weegee-black">
+          For the sport lovers . . .
+        </h4>
+        <p>
+          Sign up for the marathon or half-marathon, the Glasgow 10k, the AK
+          Bell races, the Kiltwalk - or even challenge yourself and your friends
+          to the Tough Mudder or a HYROX challenge. Every step taken and every
+          pound raised will help those in need.
+        </p>
       </div>
     </div>
   </div>

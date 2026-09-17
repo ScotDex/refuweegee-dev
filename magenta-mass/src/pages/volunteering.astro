@@ -7,22 +7,20 @@ import PageBanner from "../components/PageBanner.astro";
   <PageBanner slot="banner" title="Volunteering" />
 
   <div class="pt-12">
-    <div
-      class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto md:auto-rows-[280px]"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
       <div
-        class="md:col-span-5 md:row-span-2 rounded-xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2 group cursor-pointer transition-transform duration-500 hover:-translate-y-1 relative"
+        class="md:col-span-5 rounded-xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal group relative"
       >
         <img
-          src="/assets/pens.webp"
-          alt="Coloured pens and art materials"
+          src="/assets/volunteering/welcome_pack_volunteers.webp"
+          alt="Two people smiling making up welcome packs"
           class="w-full h-full object-cover rounded-xl"
           loading="lazy"
         />
       </div>
 
       <div
-        class="md:col-span-7 md:row-span-2 bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
+        class="md:col-span-7 bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
       >
         <h2
           class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
@@ -30,17 +28,22 @@ import PageBanner from "../components/PageBanner.astro";
           Join us!
         </h2>
         <p class="text-base leading-relaxed">
-          We can't do what we do without you. We need you to join us: whether
-          it's for an hour, an event or a weekend, you will help make a huge
-          difference to us and the people that we welcome.
-        </p>
-        <p class="text-base leading-relaxed">
-          Volunteering roles available can change week to week, depending on the
-          need and availability. For the most up to date list or more
-          information, the best first step is to email us at
+          We couldn't do what we do without our volunteers. Whether you can give
+          us an hour or a whole weekend, your time can make a real difference to
+          Refuweegee and the thousands of people who come through our doors each
+          week. Our volunteering opportunities are subject to change depending
+          on what we need and when people are available. If you'd like to find
+          out what we're currently looking for or find out more, email us at
           <a href="mailto:volunteering@refuweegee.co.uk" class="link-teal">
             volunteering@refuweegee.co.uk
           </a>.
+        </p>
+        <p class="text-base leading-relaxed">
+          We also run regular volunteer socials at our George Square HQ. These
+          are a great way to meet the team and get to know the space before you
+          volunteer. We encourage everyone to come and spend some time in the
+          space first, as you'll get a better feel for Refuweegee and what
+          volunteering here is like.
         </p>
         <p>
           We regularly run events at George Square—an excellent way to get
@@ -50,63 +53,81 @@ import PageBanner from "../components/PageBanner.astro";
       </div>
 
       <div
-        class="md:col-span-8 md:row-span-1 bg-weegee-yellow rounded-xl p-8 border-2 border-weegee-yellow flex flex-col justify-center"
+        class="md:col-span-6 bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
       >
-        <h2 class="text-2xl mb-2">Volunteer social</h2>
+        <h2 class="text-3xl border-b pb-2 border-weegee-black/10">
+          Corporate volunteering
+        </h2>
         <p class="text-base leading-relaxed">
-          Every 6 weeks we get together to celebrate all things volunteering!
-          It's a great mix of new volunteers, long serving volunteers and people
-          who have never volunteered but want to know more! To find out the date
-          of our next social check out the <a href="/events" class="link"
-            >Events page</a
+          We're always amazed by how much one team can get done in a day. We
+          regularly welcome corporate groups of up to 12 people who dedicate
+          their time to help with the work that keeps Refuweegee going. What
+          you'll do depends on what we need that day. You might help sort
+          donations in the shop or spend some time chatting with our visitors.
+          Sometimes the simplest things, like offering a hot drink and a chat,
+          can make someone feel welcome. If your team would like to volunteer
+          with us, get in touch with Lily, our Corporate Relations Coordinator,
+          at <a href="mailto:volunteering@refuweegee.co.uk" class="link-teal"
+            >volunteering@refuweegee.co.uk</a
           >.
         </p>
       </div>
 
       <div
-        class="md:col-span-4 md:row-span-1 rounded-xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2 group cursor-pointer transition-transform duration-500 hover:-translate-y-1 relative"
+        class="md:col-span-6 rounded-xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal group relative"
       >
         <img
-          src="/assets/group.webp"
-          alt="Volunteers grouping together"
+          src="/assets/volunteering/shop_volunteers.webp"
+          alt="Three people volunteering in the Refuweegee shop"
           class="w-full h-full object-cover rounded-xl"
           loading="lazy"
         />
       </div>
 
       <div
-        class="md:col-span-4 md:row-span-2 rounded-xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal p-2 group cursor-pointer transition-transform duration-500 hover:-translate-y-1 relative"
+        class="md:col-span-5 rounded-xl overflow-hidden border-2 border-weegee-teal bg-weegee-teal group relative"
       >
         <img
-          src="/assets/drawing.webp"
-          alt="Artistic welcoming drawing"
+          src="/assets/volunteering/stacking_rails.webp"
+          alt="Woman in green Scottish Power volunteers t-shirt stacking clothing rails"
           class="w-full h-full object-cover rounded-xl"
           loading="lazy"
         />
       </div>
 
       <div
-        class="md:col-span-8 md:row-span-2 bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
+        class="md:col-span-7 bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col justify-center gap-4"
       >
-        <h2 class="text-2xl border-b pb-2 border-weegee-teal/10">
-          Corporate volunteering
+        <h2
+          class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10"
+        >
+          Local partners
         </h2>
         <p class="text-base leading-relaxed">
-          We are constantly blown away by the positive impact teams of corporate
-          volunteers can make in just one day. We love seeing groups come
-          together to make a difference and regularly host teams of up to 12
-          people, who dedicate their hours to helping us run core services.
+          Refuweegee started in Glasgow, and being a local weegie charity is a
+          core part of who we are. We're lucky to have built strong
+          relationships with people and organisations across the city.
         </p>
         <p class="text-base leading-relaxed">
-          Whether it is sorting clothing donations, assisting customers in our
-          free shop or simply making someone a cuppa and giving them a chance to
-          practice their English - there are roles suited to everyone!
+          We've worked with local schools and universities, community
+          organisations, the NHS and other charities. We've also worked with
+          people across Glasgow's creative and cultural communities, from
+          musicians and photographers to artists and reporters. These
+          relationships have helped us increase our visibility and build a
+          strong community around our mission. Local businesses have also been
+          crucial for our work. Some have supported us through donations or
+          fundraising, while others have hosted donation drop off points. You
+          can currently find donation drop-off points at Vanilla Ink and Glasgow
+          Heritage Trust.
         </p>
-        <p class="font-medium text-weegee-teal">
-          If your team would like to support us, get in touch with Lily, our
-          Corporate Relations Coordinator, at <a
-            href="mailto:volunteering@refuweegee.co.uk"
-            class="link text-weegee-black">volunteering@refuweegee.co.uk</a
+        <p>
+          We're grateful to everyone who has shared our work or found a way to
+          get involved. Glasgow is a city full of people who care about their
+          community, and those connections are a huge part of what makes
+          Refuweegee possible. If you're a local organisation or business and
+          would like to work with us, we'd love to hear from you! Get in touch
+          at <a href="mailto:enquiries@refuweegee.co.uk" class="link-teal"
+            >enquiries@refuweegee.co.uk</a
           >.
         </p>
       </div>

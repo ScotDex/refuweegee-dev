@@ -72,93 +72,278 @@ import PageBanner from "../components/PageBanner.astro";
     </div>
 
     <!-- Furniture & bulk donations -->
-    <div
-      class="col-span-full bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-6"
+    <details
+      class="group col-span-full bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col"
     >
-      <h2
-        class="text-2xl text-weegee-teal-dark border-b pb-2 border-weegee-teal/10"
+      <summary
+        class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden"
       >
-        Furniture & bulk donations
-      </h2>
-      <p class="leading-relaxed font-medium">
-        For furniture and large donations, please get in touch with
-        <a href="mailto:ross@refuweegee.co.uk" class="link-teal">
-          ross@refuweegee.co.uk
-        </a>.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="flex flex-col gap-2">
-          <h3 class="text-lg font-semibold text-weegee-teal">
-            Loved items welcome
-          </h3>
-          <ul class="leading-relaxed space-y-1 font-medium">
-            <li>Double beds</li>
-            <li>Small sofas</li>
-            <li>Drawers</li>
-            <li>Tables</li>
-            <li>Soft furnishings</li>
-          </ul>
+        <h2 class="text-2xl text-weegee-teal-dark">
+          Furniture and bulk donations
+        </h2>
+        <svg
+          class="shrink-0 fill-none stroke-weegee-teal-dark transition-transform duration-300 group-open:rotate-180"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="m6 9 6 6 6-6"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </summary>
+
+      <div class="flex flex-col gap-6 pt-6 border-t mt-2 border-weegee-teal/10">
+        <p class="leading-relaxed font-medium max-w-prose">
+          We love making sure that people have the larger items that they need
+          too. However, we only have one van and our small team of strong
+          volunteers! Please be understanding of this when asking about
+          donations.
+        </p>
+
+        <p class="max-w-prose">
+          If you're in a rush and we've not had a chance to get back to you,
+          we'd recommend <a
+            class="link-teal"
+            href="https://starterpacks.org.uk/contact-us/"
+          >
+            Starter Packs Glasgow
+          </a>
+          and
+          <a class="link-teal" href="https://www.maslowscommunity.org/">
+            Maslows Community Shop.
+          </a>
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-semibold text-weegee-teal">What we love</h3>
+            <ul
+              class="leading-relaxed space-y-1 font-medium list-disc list-inside marker:text-weegee-teal"
+            >
+              <li>Clean double beds with mattresses</li>
+              <li>Small sofas (maximum 2 seats)</li>
+              <li>Chests of drawers</li>
+              <li>Bedside tables</li>
+              <li>Dining tables and chairs</li>
+              <li>Soft furnishings along with bulk donations</li>
+              <li>Lamps and other household items</li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-semibold text-weegee-black">
+              What we don't love
+            </h3>
+            <ul
+              class="leading-relaxed space-y-1 font-medium list-disc list-inside"
+            >
+              <li>Ripped or damaged furniture</li>
+              <li>Dirty items</li>
+              <li>Items for waste disposal; the dump costs us money</li>
+              <li>False advertising of items</li>
+              <li>Tight deadlines or surprises!</li>
+            </ul>
+          </div>
         </div>
-        <div class="flex flex-col gap-2">
-          <h3 class="text-lg font-semibold text-weegee-black">
-            Please do not bring
-          </h3>
-          <ul class="leading-relaxed space-y-1 font-medium">
-            <li>Ripped or damaged furniture</li>
-            <li>Dirty items</li>
-            <li>Items for waste disposal</li>
-          </ul>
-        </div>
+        <p>
+          If you have items to donate, please get in touch with <a
+            href="mailto:ross@refuweegee.co.uk"
+            class="link-teal"
+          >
+            ross@refuweegee.co.uk
+          </a>.
+        </p>
       </div>
-    </div>
+    </details>
 
     <!-- Drop-off locations -->
-    <div class="col-span-full flex flex-col gap-4">
-      <h2 class="text-xl text-weegee-teal">Drop-off locations</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div
-          class="bg-weegee-teal rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+
+    <details
+      class="group col-span-full bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col"
+    >
+      <summary
+        class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+      >
+        <h2 class="text-2xl text-weegee-teal-dark">
+          Refuweegee drop-off locations
+        </h2>
+        <svg
+          class="shrink-0 fill-none stroke-weegee-teal-dark transition-transform duration-300 group-open:rotate-180"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
         >
-          <h3 class="text-xl font-semibold text-weegee-black">Main HQ</h3>
-          <p class="mb-0">24 George Square, G2 1EG</p>
-          <p>Monday - Friday, 9:30am - 5:00pm</p>
-          <p class="text-weegee-black mt-2">
-            Parking: use the Argyle Street route and call
-            <a href="tel:01414010756" class="link"> 0141 401 0756 </a>
-            from the St Vincent Street loading bay.
+          <path
+            d="m6 9 6 6 6-6"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </summary>
+
+      <div class="flex flex-col gap-6 pt-6 border-t mt-2 border-weegee-teal/10">
+        <div class="max-w-prose">
+          <p class="mb-4">
+            Due to the closure of Anchor Lane to non-taxis and the new bus gate
+            on Ingram Street, you cannot park near our offices very easily any
+            more.
+          </p>
+
+          <p>Instead, you can:</p>
+          <ul
+            class="ml-4 mb-4 leading-relaxed space-y-1 font-medium list-disc list-outside marker:text-weegee-teal"
+          >
+            <li>
+              pull in at the loading bay on St Vincent Street, outside The
+              Counting House and call us on <a
+                class="link-teal"
+                href="tel:01414010756">0141 401 0756</a
+              > to collect items
+            </li>
+            <li>
+              park as close as possible and come the rest of the way on foot
+            </li>
+            <li>bring in donation on foot</li>
+            <li>
+              drop off donations at our Cadogan Street office (see details
+              below)
+            </li>
+          </ul>
+          <p>
+            Getting to our city centre offices can be a little complicated at
+            the moment, but we still rely on your donations.
           </p>
         </div>
+        <div class="col-span-full flex flex-col gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="bg-weegee-teal rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+            >
+              <h3 class="text-xl font-semibold text-weegee-black">Main HQ</h3>
+              <p class="mb-0">24 George Square, G2 1EG</p>
+              <p>Monday - Friday, 9:30am - 5:00pm</p>
+              <p class="text-weegee-black mt-2">
+                Our entrance is shared with Elia Greek restauraunt. Use the
+                buzzer labelled 'Refuweegee;. Our reception is on Level 3 and
+                there is elevator access.
+              </p>
+            </div>
 
-        <div
-          class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
-        >
-          <h3 class="text-xl font-semibold text-weegee-teal">
-            Alternative office
-          </h3>
-          <p class="mb-0 font-normal">51 Cadogan Street, G2 7HF</p>
-          <p class="">Fridays, 10am–3pm</p>
-        </div>
-
-        <div
-          class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
-        >
-          <h3 class="text-xl font-semibold text-weegee-teal">Vanilla Ink</h3>
-          <p class="mb-0">3rd Floor, 60 Brook Street, Glasgow G40 2AB</p>
-          <p class="">Monday - Friday, 10am - 6pm</p>
-          <a href="tel:01415886073" class="link-teal mt-1"> 0141 588 6073 </a>
-        </div>
-
-        <div
-          class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
-        >
-          <h3 class="text-xl font-semibold text-weegee-teal">
-            Glasgow City Heritage Trust
-          </h3>
-          <p class="mb-0">54 Bell Street, Glasgow G1 1LQ</p>
-          <p class="">Monday - Friday, 10am = 4pm</p>
-          <a href="tel:01415521331" class="link-teal mt-1"> 0141 552 1331 </a>
+            <div
+              class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col gap-2"
+            >
+              <h3 class="text-xl font-semibold text-weegee-teal">
+                Alternative office
+              </h3>
+              <p class="mb-0 font-normal">51 Cadogan Street, G2 7HF</p>
+              <p class="">Fridays, 10am–3pm</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </details>
+
+    <details
+      class="group col-span-full bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-col"
+    >
+      <summary
+        class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+      >
+        <h2 class="text-2xl text-weegee-teal-dark">
+          Partner drop-off locations
+        </h2>
+        <svg
+          class="shrink-0 fill-none stroke-weegee-teal-dark transition-transform duration-300 group-open:rotate-180"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="m6 9 6 6 6-6"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </summary>
+
+      <div class="flex flex-col gap-6 pt-6 border-t mt-2 border-weegee-teal/10">
+        <p>
+          To make it simpler we've enlisted the help of some local organisation
+          pals who will be happy to collect your donations on our behalf and
+          store them until we can pick them up.
+        </p>
+        <p>
+          Please do <span class="font-semibold">NOT</span> drop off bulk items or
+          large volumes without prior arrangement. If you would like to collect donations
+          for us, please contact <a
+            class="link-teal"
+            href="mailto:enquiries@refuweegee.co.uk"
+            >enquiries@refuweegee.co.uk</a
+          > . We can never have too many drop off locations!
+        </p>
+        <p>
+          Huge thanks to Vanilla Inc. & Glasgow City Heritage Trust, our latest
+          partner donation drop-off locations. You can find their details below.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-row items-center justify-between gap-4"
+          >
+            <div class="flex flex-col gap-2">
+              <h3 class="text-2xl font-semibold">Vanilla Ink</h3>
+              <a
+                href="https://maps.app.goo.gl/1nSbTWHYeH3pTpsz6"
+                class="mb-0 link-teal"
+                >3rd Floor, 60 Brook Street, Glasgow G40 2AB</a
+              >
+              <p class="">Monday - Friday, 10am - 6pm</p>
+              <p>Occasional weekends, phone first to confirm.</p>
+              <a href="tel:01415886073" class="link-teal mt-1">
+                0141 588 6073
+              </a>
+            </div>
+            <img
+              src="/assets/donations/vanilla_ink.webp"
+              alt="Vanilla Ink logo"
+              class="w-20 h-20 object-contain shrink-0"
+            />
+          </div>
+
+          <div
+            class="bg-weegee-white rounded-xl p-8 border-2 border-weegee-teal flex flex-row items-center justify-between gap-4"
+          >
+            <div class="flex flex-col gap-2">
+              <h3 class="text-2xl font-semibold">
+                Glasgow City Heritage Trust
+              </h3>
+              <a
+                href="https://maps.app.goo.gl/pq43vpeTAeQq5VGG8"
+                class="mb-0 link-teal">54 Bell Street, Glasgow G1 1LQ</a
+              >
+              <p class="">Monday - Friday, 10am - 4pm</p>
+              <a
+                class="link-teal"
+                href="https://www.glasgowheritage.org.uk/gcht-access-statement/"
+                >Access information</a
+              >
+              <a href="tel:01415521331" class="link-teal mt-1">
+                0141 552 1331
+              </a>
+            </div>
+            <img
+              src="/assets/donations/glasgow_heritage.webp"
+              alt="Glasgow City Heritage Trust logo"
+              class="w-20 h-20 object-contain shrink-0"
+            />
+          </div>
+        </div>
+      </div>
+    </details>
   </div>
 </Layout>
