@@ -42,10 +42,12 @@ const eventImages: [RegExp, string][] = [
   [/yoga/i, "/assets/events/yoga.webp"],
   [/storytime/i, "/assets/events/storytime.webp"],
   [/art/i, "/assets/events/artclass.webp"],
+  [/cinema|documentary|film|filmmaking|movie/i, "/assets/events/film.webp"],
 ];
 
 const imageFor = (title: string) =>
-  eventImages.find(([pattern]) => pattern.test(title))?.[1];
+  eventImages.find(([pattern]) => pattern.test(title))?.[1] ??
+  "/assets/events/default.webp";
 ---
 
 <Layout title="Events">
