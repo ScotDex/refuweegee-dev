@@ -13,11 +13,11 @@
 
 @layer components {
   .link-teal {
-    @apply text-weegee-teal hover:underline font-semibold;
+    @apply text-weegee-teal underline font-semibold;
   }
 
   .link {
-    @apply font-semibold hover:underline;
+    @apply font-semibold underline;
   }
 }
 

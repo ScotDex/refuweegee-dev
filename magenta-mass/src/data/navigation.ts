@@ -30,6 +30,7 @@ export const navDropdowns: NavDropdown[] = [
       { label: "Fundraise for us", href: "/fundraise" },
       { label: "Make a referral", href: "/referrals" },
       { label: "Your donations", href: "/your-donations" },
+      { label: "Welcome packs", href: "/welcome-packs" },
     ],
   },
 ];

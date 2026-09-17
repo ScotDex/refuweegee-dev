@@ -1,0 +1,158 @@
+---
+import Layout from "../components/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+---
+
+<Layout title="Welcome packs">
+  <PageBanner slot="banner" title="Welcome packs">
+    <span slot="box">
+      Help us to welcome Refuweegees to Glasgow by taking over the welcome pack
+      building!
+    </span>
+  </PageBanner>
+
+  <div class="pt-6 lg:pt-12 flex flex-col gap-6">
+    <!-- Intro -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div
+        class="rounded-xl p-4 lg:p-8 border-2 border-weegee-teal lg:col-span-6 gap-2"
+      >
+        <h2
+          class="text-2xl text-weegee-teal-dark font-bold border-b pb-2 mb-4 border-weegee-black/20"
+        >
+          Build your welcome pack
+        </h2>
+
+        <p class="mb-4">
+          Welcome and essential pack items are always needed for providing the
+          initial gesture of kindness that we wish to extend to all those
+          arriving in Scotland.
+        </p>
+        <p class="mb-4">
+          We've put together a wee essentials list to make building and donating
+          both simple and impactful.
+        </p>
+        <p class="text-weegee-black mb-4">
+          Details of where to drop off your donations can be found on our <a
+            href="/your-donations"
+            class="link">donations page</a
+          >.
+        </p>
+        <p class="text-weegee-black mb-4">
+          Please note that whilst the list below is our 'essentials list' we are
+          happy to receive slight variations. We check each pack before it goes
+          out so can add anything that's missing or remove anything bonkers!
+        </p>
+        <p>
+          Contact <a href="mailto:enquiries@refuweegee.co.uk" class="link-teal"
+            >enquiries@refuweegee.co.uk</a
+          > with any questions.
+        </p>
+      </div>
+      <div
+        class="relative rounded-xl lg:col-span-6 border-2 border-weegee-teal overflow-hidden h-64 lg:h-0 lg:min-h-full"
+      >
+        <img
+          src="/assets/welcome/welcome_totes.webp"
+          alt="Welcome pack tote bags"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Essentials list -->
+      <div
+        class="hidden lg:block relative rounded-xl lg:col-span-4 border-2 border-weegee-teal overflow-hidden"
+      >
+        <img
+          src="/assets/welcome/welcome_pack.webp"
+          alt="Welcome pack tote bags"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div
+        class="lg:col-span-8 bg-weegee-white rounded-xl p-4 lg:p-8 border-2 border-weegee-teal gap-4"
+      >
+        <h2
+          class="text-2xl text-weegee-teal-dark font-bold border-b pb-2 border-weegee-black/20 mb-4"
+        >
+          List of essentials
+        </h2>
+        <ul
+          class="leading-relaxed font-medium text-weegee-black list-disc list-outside marker:text-weegee-teal ml-4"
+        >
+          <li>
+            A bag, whether a gift bag or a rucksack – something to put all of
+            the items into.
+          </li>
+          <li>
+            Toiletries – shampoo, shower gel, soap, toothbrush and toothpaste,
+            deodorant and sanitary or shaving items.
+          </li>
+          <li>Notepad and pen.</li>
+          <li>Hat, gloves and scarf (2 of the 3 ideal).</li>
+          <li>
+            A wee token of Scotland or Glasgow – from tea towels to guide books,
+            just think about what makes you think of home. Tunnocks? Irn Bru? Be
+            creative!
+          </li>
+          <li>
+            Something to read – varying reading abilities so all books
+            acceptable. Please do consider the content though.
+          </li>
+          <li>
+            Something to eat – this is very often also the token of Scotland!
+            From highland toffees to porridge oats, it's always nice to include
+            something to munch.
+          </li>
+          <li>
+            Letter fae a local – your welcome letter to say hello, welcome and
+            anything else you'd like to include. As long as it's kind then it's
+            acceptable!
+          </li>
+        </ul>
+      </div>
+      <div
+        class="lg:hidden relative rounded-xl lg:col-span-4 border-2 border-weegee-teal overflow-hidden"
+      >
+        <img
+          src="/assets/welcome/welcome_pack.webp"
+          alt="Welcome pack tote bags"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Packs for children -->
+
+      <div
+        class="lg:col-span-8 bg-weegee-white rounded-xl p-4 lg:p-8 border-2 border-weegee-teal flex flex-col gap-4"
+      >
+        <h2
+          class="text-2xl text-weegee-teal-dark font-bold border-b pb-2 border-weegee-black/20"
+        >
+          Welcome packs for children
+        </h2>
+        <p class="leading-relaxed font-medium max-w-prose">
+          We are also happy to receive welcome packs for children. These should
+          follow the same essentials list above with age appropriate items and a
+          small toy if appropriate.
+        </p>
+        <p class="leading-relaxed font-medium max-w-prose">
+          Please ensure that the age of the child it is intended for is included
+          on the outside of the pack. And please don't forget that we welcome
+          teenagers as well as younger children.
+        </p>
+      </div>
+
+      <div
+        class="relative rounded-xl lg:col-span-4 border-2 border-weegee-teal overflow-hidden"
+      >
+        <img
+          src="/assets/welcome/welcome_postcard.webp"
+          alt="Welcome pack tote bags"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
