@@ -23,7 +23,7 @@
 
 @layer base {
   html {
-    font-size: 18px;
+    font-size: 100%;
     color: #000000;
     scroll-behavior: smooth;
   }
@@ -47,44 +47,82 @@
   h1 {
     font-family: "Libre Baskerville", Georgia, serif;
     font-weight: 700;
-    font-size: clamp(
-      1.2rem,
-      1.2rem + 2.2vw,
-      3rem
-    ); /* ~34px mobile -> 54px desktop */
     letter-spacing: -0.02em;
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.5; /* 54px */
   }
 
   h2 {
     font-family: "Libre Baskerville", Georgia, serif;
     font-weight: 600;
-    font-size: clamp(
-      1rem,
-      1rem + 1.6vw,
-      2rem
-    ); /* ~25px mobile -> 36px desktop */
     letter-spacing: 0.02em;
+    font-size: 2rem; /* 32px */
+    line-height: 1.5; /* 48px */
   }
 
   h3 {
     font-weight: 600;
-    font-size: clamp(
-      1.125rem,
-      0.9rem + 1vw,
-      1.5rem
-    ); /* ~20px mobile -> 27px desktop */
     letter-spacing: 0.02em;
+    font-size: 1.75rem; /* 28px */
+    line-height: 1.5; /* 42px */
   }
 
   h4 {
     font-weight: 600;
-    font-size: 1rem; /* 18px */
     letter-spacing: 0.02em;
+    font-size: 1.625rem; /* 26px */
+    line-height: 1.538; /* 40px */
+  }
+
+  h5 {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.5; /* 36px */
+  }
+
+  h6 {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.5; /* 30px */
+  }
+
+  small {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5; /* 24px */
   }
 
   body,
   p {
     font-weight: 400;
     margin-bottom: 4px;
+    font-size: 1rem; /* 16px */
+    line-height: 1.5; /* 24px */
+  }
+
+  @media (min-width: 48rem) {
+    h1 {
+      font-size: 2.5rem; /* 40px */
+    }
+    h2 {
+      font-size: 2.25rem; /* 36px */
+    }
+    h3 {
+      font-size: 2rem; /* 32px */
+    }
+    h4 {
+      font-size: 1.75rem; /* 28px */
+      line-height: 1.5; /* 42px */
+    }
+  }
+
+  @media (min-width: 64rem) {
+    h1 {
+      font-size: 2.75rem; /* 44px */
+    }
+    h2 {
+      font-size: 2.5rem; /* 40px */
+    }
   }
 }

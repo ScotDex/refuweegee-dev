@@ -10,20 +10,18 @@ const hasBox = Astro.slots.has("box");
 
 <div class="w-full font-black bg-weegee-teal">
   <div
-    class="max-w-7xl mx-auto lg:px-0 py-4 md:py-6 flex justify-between gap-4 items-start"
+    class="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between gap-4 items-center"
   >
-    {
-      hasBox ? (
-        <div class="rounded-xl px-6 py-3 max-w-prose flex flex-col gap-2">
-          <h1 class="whitespace-nowrap">{title}</h1>
+    <div class="rounded-xl py-3 max-w-prose flex flex-col gap-2">
+      <h1 class="whitespace-normal md:whitespace-nowrap">{title}</h1>
+      {
+        hasBox && (
           <div class="font-normal">
             <slot name="box" />
           </div>
-        </div>
-      ) : (
-        <h1 class="whitespace-nowrap">{title}</h1>
-      )
-    }
+        )
+      }
+    </div>
 
     {
       showBasket && (

@@ -67,6 +67,161 @@ import Layout from "../components/Layout.astro";
             title="Safe Spaces Map"></iframe>
           <!-- Note: The quick CSS filter class above flips a standard google map into a beautiful dark mode that matches your page background perfectly! -->
         </div>
+
+        <!-- Safe Place Registration Form (submissions emailed via FormSubmit) -->
+        <div
+          id="register"
+          class="bg-weegee-white/5 border-2 border-weegee-white/20 p-6 md:p-8 rounded-xl scroll-mt-8"
+        >
+          <h2 class="text-3xl text-weegee-white mb-2">Register a safe place</h2>
+          <p class="text-sm text-weegee-white/70 mb-6">
+            Fields marked <span class="text-weegee-teal">*</span> are required.
+          </p>
+
+          <div
+            id="form-success"
+            class="hidden bg-weegee-teal/10 border-2 border-weegee-teal/30 p-6 rounded-xl"
+            role="status"
+          >
+            <h3 class="text-lg font-bold text-weegee-teal mb-2">
+              Thank you for being Safe With Me!
+            </h3>
+            <p class="text-sm text-weegee-white leading-relaxed">
+              We've received your details and will be in touch soon.
+            </p>
+          </div>
+
+          <form
+            id="safe-with-me-form"
+            action="https://formsubmit.co/enquiries@refuweegee.co.uk"
+            method="POST"
+            class="grid grid-cols-1 md:grid-cols-2 gap-5"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Safe With Me registration"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" id="form-next" value="" />
+            <input
+              type="text"
+              name="_honey"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <label class="form-field">
+              <span>Your name <span class="text-weegee-teal">*</span></span>
+              <input type="text" name="Name" autocomplete="name" required />
+            </label>
+
+            <label class="form-field">
+              <span>Contact email <span class="text-weegee-teal">*</span></span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+
+            <label class="form-field">
+              <span>Phone</span>
+              <input type="tel" name="Phone" autocomplete="tel" />
+            </label>
+
+            <label class="form-field">
+              <span
+                >Who is registering? <span class="text-weegee-teal">*</span></span
+              >
+              <select name="Who is registering" required>
+                <option value="" disabled selected>Please choose</option>
+                <option>An individual/residential address</option>
+                <option>A business/organisation</option>
+                <option>Rather not say</option>
+              </select>
+            </label>
+
+            <label class="form-field md:col-span-2">
+              <span>Address <span class="text-weegee-teal">*</span></span>
+              <textarea
+                name="Address"
+                rows="3"
+                autocomplete="street-address"
+                required></textarea>
+            </label>
+
+            <label class="form-field">
+              <span>City <span class="text-weegee-teal">*</span></span>
+              <input
+                type="text"
+                name="City"
+                autocomplete="address-level2"
+                required
+              />
+            </label>
+
+            <label class="form-field">
+              <span>Postcode <span class="text-weegee-teal">*</span></span>
+              <input
+                type="text"
+                name="Postcode"
+                autocomplete="postal-code"
+                required
+              />
+            </label>
+
+            <label class="form-field md:col-span-2">
+              <span>Country/Region <span class="text-weegee-teal">*</span></span>
+              <input
+                type="text"
+                name="Country"
+                value="United Kingdom"
+                autocomplete="country-name"
+                required
+              />
+            </label>
+
+            <label class="form-field">
+              <span>Company/Business name</span>
+              <input type="text" name="Company" autocomplete="organization" />
+            </label>
+
+            <label class="form-field">
+              <span>Website or social media</span>
+              <input type="text" name="Website or social" />
+            </label>
+
+            <label class="form-field md:col-span-2">
+              <span
+                >Would you like to appear on our map? <span
+                  class="text-weegee-teal">*</span
+                ></span
+              >
+              <select name="Appear on map" required>
+                <option value="" disabled selected>Please choose</option>
+                <option>Yes please</option>
+                <option>No thanks</option>
+              </select>
+            </label>
+
+            <p
+              class="md:col-span-2 text-sm text-weegee-white/70 leading-relaxed"
+            >
+              We need to update the map manually, so if you sign up with your
+              home address then we won't add anyone's name, house number or
+              street number to the map – only a street name and a wee house
+              icon.
+            </p>
+
+            <div class="md:col-span-2">
+              <button
+                type="submit"
+                class="w-full md:w-auto bg-weegee-white text-weegee-black font-bold py-3 px-8 rounded-xl hover:bg-weegee-teal hover:text-weegee-white transition-colors cursor-pointer"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
 
       <!-- RIGHT CONTAINER: The Campaign Assets & Toolkit (Spans 5 columns) -->
@@ -131,3 +286,37 @@ import Layout from "../components/Layout.astro";
     </div>
   </main>
 </Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .form-field {
+    @apply flex flex-col gap-2 text-sm font-bold text-weegee-white;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    @apply w-full rounded-xl border-2 border-weegee-white/20 bg-weegee-white/5 px-4 py-3 font-normal text-weegee-white transition-colors focus:border-weegee-teal focus:outline-none;
+  }
+
+  .form-field select option {
+    @apply bg-weegee-black text-weegee-white;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("safe-with-me-form");
+  const next = document.getElementById("form-next") as HTMLInputElement | null;
+  const success = document.getElementById("form-success");
+
+  // Send FormSubmit back to this page after submitting
+  if (next) {
+    next.value = `${window.location.origin}${window.location.pathname}?submitted=1#register`;
+  }
+
+  if (new URLSearchParams(window.location.search).has("submitted")) {
+    form?.classList.add("hidden");
+    success?.classList.remove("hidden");
+  }
+</script>
