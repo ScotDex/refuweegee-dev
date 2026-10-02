@@ -1,0 +1,34 @@
+---
+import Layout from "../components/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import PasswordModal from "../components/PasswordModal.astro";
+import { checkPassword } from "../lib/password-gate";
+
+// Rendered on the server so the password and form link never reach the browser
+export const prerender = false;
+
+const { unlocked, error } = await checkPassword(Astro, "RWG1092");
+---
+
+<Layout title="Emergency shop appointment request">
+  <PageBanner slot="banner" title="Emergency shop appointment request">
+    <span slot="box">
+      For partner organisations making emergency shop requests on behalf of the
+      people they support.
+    </span>
+  </PageBanner>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    {unlocked ? (
+      <div class="border-2 border-weegee-black/10 rounded-xl overflow-hidden">
+        <iframe
+          class="airtable-embed block w-full h-[1000px] bg-transparent"
+          src="https://airtable.com/embed/apptTh069fV69EK7w/pagFdhv84Ai4WSAuC/form"
+          title="Emergency shop appointment request form"
+        ></iframe>
+      </div>
+    ) : (
+      <PasswordModal error={error} />
+    )}
+  </main>
+</Layout>

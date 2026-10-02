@@ -1,0 +1,36 @@
+---
+import Layout from "../components/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import PasswordModal from "../components/PasswordModal.astro";
+import { checkPassword } from "../lib/password-gate";
+
+// Rendered on the server so the password and form link never reach the browser
+export const prerender = false;
+
+const { unlocked, error } = await checkPassword(Astro, "REF645");
+---
+
+<Layout title="Emergency support request">
+  <PageBanner slot="banner" title="Emergency support request">
+    <span slot="box">
+      For partner organisations making emergency support requests on behalf of
+      the people they support.
+    </span>
+  </PageBanner>
+
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    {unlocked ? (
+      <div class=" overflow-hidden">
+        <iframe
+          class="block w-full h-400 bg-transparent"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdF4OT1qJfCjyyinrqL3a6TebPTPA5KqqHJY4t7mMvWBp6M0A/viewform?embedded=true"
+          title="Emergency support request form"
+        >
+            Loading…
+          </iframe>
+      </div>
+    ) : (
+      <PasswordModal error={error} />
+    )}
+  </main>
+</Layout>
