@@ -1,0 +1,165 @@
+---
+// Volunteer mailing list modal, shown once per visitor on pages that include it
+---
+
+<dialog
+  id="mailing-list-modal"
+  aria-labelledby="mailing-list-title"
+  class="m-auto w-[calc(100%-2rem)] max-w-lg rounded-xl border-2 border-weegee-teal bg-weegee-white p-0 backdrop:bg-weegee-black/60"
+>
+  <div class="relative flex flex-col gap-4 p-8">
+    <button
+      type="button"
+      id="mailing-list-close"
+      aria-label="Close"
+      class="absolute top-3 right-3 h-9 w-9 rounded-full text-2xl leading-none hover:bg-weegee-teal/10 cursor-pointer"
+    >
+      &times;
+    </button>
+
+    <h2
+      id="mailing-list-title"
+      class="text-3xl text-weegee-teal border-b pb-2 border-weegee-teal/10 pr-8"
+    >
+      Join our volunteer mailing list!
+    </h2>
+
+    <div id="mailing-list-success" class="hidden" role="status">
+      <p class="font-bold text-weegee-teal">
+        Thanks for signing up! We'll be in touch soon.
+      </p>
+    </div>
+
+    <form
+      id="mailing-list-form"
+      action="https://formsubmit.co/volunteering@refuweegee.co.uk"
+      method="POST"
+      class="flex flex-col gap-4"
+    >
+      <p class="text-base leading-relaxed">
+        Enter your name and e-mail address below to receive occasional e-mails
+        about upcoming events, volunteering opportunities, donation drives and
+        more!
+      </p>
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="New volunteer mailing list sign-up"
+      />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" id="mailing-list-next" value="" />
+      <input
+        type="text"
+        name="_honey"
+        class="hidden"
+        tabindex="-1"
+        autocomplete="off"
+      />
+
+      <label class="modal-field">
+        <span>Name <span class="text-weegee-teal">*</span></span>
+        <input type="text" name="Name" autocomplete="name" required />
+      </label>
+
+      <label class="modal-field">
+        <span>Email <span class="text-weegee-teal">*</span></span>
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+
+      <button
+        type="submit"
+        class="w-full bg-weegee-teal text-weegee-white font-bold py-3 px-8 rounded-xl hover:bg-weegee-teal-dark transition-colors cursor-pointer"
+      >
+        Sign me up!
+      </button>
+    </form>
+  </div>
+</dialog>
+
+<style>
+  @reference "../styles/global.css";
+
+  .modal-field {
+    @apply flex flex-col gap-2 text-sm font-bold;
+  }
+
+  .modal-field input {
+    @apply w-full rounded-xl border-2 border-weegee-teal/30 bg-weegee-white px-4 py-3 font-normal transition-colors focus:border-weegee-teal focus:outline-none;
+  }
+</style>
+
+<script>
+  // Show on first visit, then again every REMIND_AFTER_DAYS after it was
+  // last closed. Once someone signs up it never shows again.
+  const REMIND_AFTER_DAYS = 14;
+  const DISMISSED_KEY = "mailingListModalDismissedAt";
+  const SUBSCRIBED_KEY = "mailingListSubscribed";
+
+  const params = new URLSearchParams(window.location.search);
+  const modal = document.getElementById(
+    "mailing-list-modal",
+  ) as HTMLDialogElement | null;
+  const modalForm = document.getElementById("mailing-list-form");
+  const modalNext = document.getElementById(
+    "mailing-list-next",
+  ) as HTMLInputElement | null;
+  const modalSuccess = document.getElementById("mailing-list-success");
+
+  const read = (key: string) => {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  };
+
+  const write = (key: string, value: string) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Storage unavailable (e.g. private browsing) - modal may show again
+    }
+  };
+
+  const isDue = () => {
+    if (read(SUBSCRIBED_KEY) === "1") return false;
+    const dismissedAt = Number(read(DISMISSED_KEY));
+    if (!dismissedAt) return true;
+    return Date.now() - dismissedAt > REMIND_AFTER_DAYS * 24 * 60 * 60 * 1000;
+  };
+
+  const markSubscribed = () => write(SUBSCRIBED_KEY, "1");
+
+  // Send FormSubmit back to the current page after signing up
+  if (modalNext) {
+    modalNext.value = `${window.location.origin}${window.location.pathname}?subscribed=1`;
+  }
+
+  if (modal) {
+    modal.addEventListener("close", () =>
+      write(DISMISSED_KEY, String(Date.now())),
+    );
+    document
+      .getElementById("mailing-list-close")
+      ?.addEventListener("click", () => modal.close());
+
+    // Close when clicking the backdrop
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) modal.close();
+    });
+
+    modalForm?.addEventListener("submit", markSubscribed);
+
+    if (params.has("subscribed")) {
+      markSubscribed();
+      modalForm?.classList.add("hidden");
+      modalSuccess?.classList.remove("hidden");
+      modal.showModal();
+    } else if (isDue() && !params.has("submitted")) {
+      // Don't interrupt a page showing another form's thank-you message
+      modal.showModal();
+    }
+  }
+</script>
